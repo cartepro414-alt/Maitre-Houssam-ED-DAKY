@@ -3,140 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07101d">
-  <title>Maître Houssam ED-Daky | Avocat à Meknès</title>
+  <meta name="theme-color" content="#051024">
+  <title>Maître Houssam ED-Daky | Avocat au Barreau de Meknès</title>
 
-  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans (FR) | Amiri & IBM Plex Sans Arabic (AR) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-abyss: #060d18;
-      --bg-navy: #0a1628;
-      --bg-card: rgba(14, 29, 50, 0.78);
-      --bg-card-hover: rgba(19, 39, 68, 0.92);
-      --bg-glass: rgba(10, 22, 40, 0.85);
-      --royal-blue: #1d5696;
-      --royal-glow: rgba(29, 86, 150, 0.28);
-      --gold: #c9a45c;
-      --gold-bright: #e4c687;
-      --gold-deep: #9c7834;
-      --gold-border: rgba(201, 164, 92, 0.32);
-      --gold-border-strong: rgba(201, 164, 92, 0.68);
-      --gold-soft: rgba(201, 164, 92, 0.10);
-      --emerald-dark: rgba(16, 78, 53, 0.55);
-      --emerald-border: rgba(52, 168, 112, 0.45);
+      --bg-main: #040b18;
+      --bg-sec: #091936;
+      --panel-bg: linear-gradient(145deg, rgba(13, 34, 72, 0.78) 0%, rgba(5, 14, 32, 0.92) 100%);
+      --panel-sub: rgba(255, 255, 255, 0.04);
+      --royal-blue: #124ea8;
+      --royal-mosaic: #1b69de;
+      --gold: #d4af63;
+      --gold-bright: #f5dda2;
+      --gold-deep: #9c752b;
+      --gold-border: rgba(212, 175, 99, 0.36);
+      --gold-border-strong: rgba(245, 221, 162, 0.82);
+      --emerald-border: rgba(52, 211, 153, 0.5);
       --emerald-light: #6ee7b7;
-      --text-white: #f9f6f0;
-      --text-cream: #e6decb;
-      --text-silver: #b5c0ce;
-      --text-muted: #7f8ea3;
+      --text-primary: #FAF8F5;
+      --text-secondary: #E6DFD1;
+      --text-muted: #AFC0D6;
       --font-serif-fr: "Cormorant Garamond", Georgia, serif;
-      --font-sans-fr: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans-fr: "Plus Jakarta Sans", -apple-system, sans-serif;
       --font-serif-ar: "Amiri", Georgia, serif;
-      --font-sans-ar: "IBM Plex Sans Arabic", "Noto Sans Arabic", sans-serif;
-      --shadow-luxury: 0 24px 60px rgba(0, 0, 0, 0.55);
-      --shadow-gold: 0 10px 30px rgba(201, 164, 92, 0.16);
+      --font-sans-ar: "IBM Plex Sans Arabic", sans-serif;
+      --shadow-3d: 0 28px 65px -12px rgba(0, 0, 0, 0.78), 0 0 1px 1px rgba(212, 175, 99, 0.32);
+      --shadow-gold: 0 12px 32px -6px rgba(212, 175, 99, 0.4);
     }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
+    /* Royal Card Light Mode (Matches Physical Card White + Mosaic Blue + Gold) */
+    body.theme-card-light {
+      --bg-main: #F8F6F1;
+      --bg-sec: #FFFFFF;
+      --panel-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 242, 233, 0.96) 100%);
+      --panel-sub: rgba(18, 78, 168, 0.05);
+      --text-primary: #071C3D;
+      --text-secondary: #15325E;
+      --text-muted: #466085;
+      --gold-border: rgba(184, 140, 56, 0.42);
+      --gold-border-strong: rgba(176, 130, 42, 0.85);
+      --shadow-3d: 0 22px 50px -12px rgba(9, 30, 66, 0.14), 0 0 1px 1px rgba(184, 140, 56, 0.35);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       padding: 0;
-      background-color: var(--bg-abyss);
-      color: var(--text-white);
+      background-color: var(--bg-main);
+      color: var(--text-primary);
       font-family: var(--font-sans-fr);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       min-height: 100vh;
       position: relative;
+      transition: background-color 0.35s ease, color 0.35s ease;
     }
 
-    /* Classical Architectural Colonnade & Ambient Lighting Background */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 72% 22%, rgba(29, 86, 150, 0.24) 0%, transparent 70%),
-        radial-gradient(ellipse 55% 45% at 20% 15%, rgba(201, 164, 92, 0.12) 0%, transparent 65%),
-        radial-gradient(ellipse 80% 60% at 50% 90%, rgba(15, 34, 62, 0.6) 0%, transparent 80%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.012) 0px,
-          rgba(255, 255, 255, 0.012) 1px,
-          transparent 1px,
-          transparent 90px
-        ),
-        linear-gradient(180deg, #060d18 0%, #0b182c 45%, #071120 100%);
+        radial-gradient(circle at 82% 15%, rgba(27, 105, 222, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 15% 22%, rgba(212, 175, 99, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(18, 78, 168, 0.22) 0%, transparent 65%);
       pointer-events: none;
       z-index: -2;
     }
 
-    /* Subtle Gold Dust Vignette */
+    /* Moroccan Geometric Mashrabiya Pattern Overlay (Inspired by Physical Card Arch) */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background-image: radial-gradient(rgba(228, 198, 135, 0.12) 1px, transparent 1px);
-      background-size: 48px 48px;
-      opacity: 0.25;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af63' stroke-width='0.6' stroke-opacity='0.12'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Ccircle cx='40' cy='40' r='22'/%3E%3Cpath d='M0 0L80 80M80 0L0 80'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 72px 72px;
       pointer-events: none;
       z-index: -1;
     }
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 28px;
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+
+    /* Glassmorphism & 3D Orbs */
+    .glass-panel {
+      background: var(--panel-bg);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1.5px solid var(--gold-border);
+      box-shadow: var(--shadow-3d);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* ================= TOP NAVIGATION BAR ================= */
+    .orb-3d-sapphire {
+      background: linear-gradient(145deg, #16468a, #081c3c);
+      border: 1px solid rgba(245, 221, 162, 0.55);
+      box-shadow: 0 8px 18px rgba(4, 11, 24, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+      color: #f5dda2;
+    }
+
+    /* ================= NAVBAR ================= */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(6, 13, 24, 0.86);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--gold-border);
+      background: rgba(4, 11, 24, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1.5px solid var(--gold-border);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
     }
 
     .navbar-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 14px 28px;
+      padding: 12px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 14px;
     }
 
     .brand-identity {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       text-decoration: none;
-      color: var(--text-white);
+      color: #FAF8F5;
     }
 
     .nav-logo-ring {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       padding: 2px;
-      background: linear-gradient(135deg, var(--gold-bright), var(--royal-blue), var(--gold));
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+      background: linear-gradient(135deg, var(--gold-bright), var(--royal-mosaic), var(--gold));
+      box-shadow: 0 4px 15px rgba(27, 105, 222, 0.45);
       flex-shrink: 0;
     }
 
@@ -150,287 +159,249 @@
       display: block;
     }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
     .brand-name {
       font-family: var(--font-serif-fr);
-      font-size: 19px;
+      font-size: 18.5px;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--text-white);
+      color: #FAF8F5;
+      display: block;
       line-height: 1.15;
     }
 
     .brand-sub {
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav-links a {
-      color: var(--text-silver);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.25s ease;
-      position: relative;
-      padding: 4px 0;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.25s ease;
-    }
-
-    .nav-links a:hover {
+      letter-spacing: 0.14em;
       color: var(--gold-bright);
+      display: block;
+      margin-top: 2px;
+      font-weight: 600;
     }
 
-    .nav-links a:hover::after {
-      transform: scaleX(1);
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a {
+      color: #D0DAE8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
     }
+    .nav-links a:hover { color: var(--gold-bright); }
 
-    .nav-actions {
-      display: flex;
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+
+    .icon-pill-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(212, 175, 99, 0.15);
+      border: 1px solid var(--gold-border-strong);
+      color: var(--gold-bright);
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
     }
+    .icon-pill-btn:hover { background: var(--gold); color: #040b18; }
+    .icon-pill-btn svg { width: 14px; height: 14px; stroke: currentColor; }
 
     .language-switch {
       display: inline-flex;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(11, 25, 48, 0.92);
       border: 1px solid var(--gold-border);
-      border-radius: 4px;
-      padding: 3px;
+      border-radius: 999px;
+      padding: 2.5px;
       direction: ltr;
     }
-
     .language-switch button {
       border: none;
       background: transparent;
-      color: var(--text-silver);
-      padding: 6px 13px;
-      border-radius: 2px;
+      color: #C2CFE0;
+      padding: 5px 10px;
+      border-radius: 999px;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      transition: all 0.25s ease;
-      font-family: var(--font-sans-fr);
+      font-weight: 700;
+      font-size: 11px;
+      transition: all 0.2s ease;
     }
-
-    .language-switch button#arButton {
-      font-family: var(--font-sans-ar);
-      letter-spacing: 0;
-      font-size: 12.5px;
-    }
-
     .language-switch button.active {
-      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-      color: var(--bg-abyss);
-      box-shadow: 0 2px 10px rgba(201, 164, 92, 0.35);
+      background: linear-gradient(135deg, #FFF3D1 0%, #D4AF63 55%, #9E782F 100%);
+      color: #040b18;
     }
 
     /* ================= HERO SECTION ================= */
     .hero {
       position: relative;
-      padding: 64px 0 76px;
-      border-bottom: 1px solid var(--gold-border);
+      padding: 52px 0 72px;
+      border-bottom: 1.5px solid var(--gold-border);
       overflow: hidden;
     }
 
-    /* Subtle Classical Scales Watermark in Hero Background */
-    .hero-watermark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 560px;
-      height: 560px;
-      opacity: 0.035;
-      pointer-events: none;
-      z-index: 0;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 44px;
     }
 
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+    .hero-badges-row {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 56px;
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
     .hero-overline {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 7px 16px;
-      background: rgba(201, 164, 92, 0.09);
-      border: 1px solid var(--gold-border);
-      border-radius: 2px;
-      margin-bottom: 22px;
+      gap: 8px;
+      padding: 6px 15px;
+      background: linear-gradient(135deg, #0b2d66, #134ea8);
+      border: 1px solid var(--gold-bright);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(18, 78, 168, 0.35);
     }
 
-    .hero-overline-dot {
-      width: 7px;
-      height: 7px;
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: rgba(16, 85, 58, 0.25);
+      border: 1px solid var(--emerald-border);
+      color: #10b981;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    body:not(.theme-card-light) .live-status-pill { color: var(--emerald-light); }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 8px var(--gold);
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulseDot 2s infinite;
     }
-
-    .title-badge {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-bright);
-      font-weight: 600;
-    }
-
-    .title-separator {
-      color: rgba(201, 164, 92, 0.45);
-    }
-
-    .barreau-badge {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-cream);
-      font-weight: 500;
-    }
+    @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
     h1 {
       font-family: var(--font-serif-fr);
-      font-size: clamp(38px, 5vw, 60px);
-      font-weight: 600;
-      letter-spacing: 0.01em;
+      font-size: clamp(34px, 4.6vw, 56px);
+      font-weight: 700;
       line-height: 1.08;
-      margin: 0 0 12px;
-      color: var(--text-white);
+      margin: 0 0 6px;
+      color: var(--text-primary);
     }
 
     .arabic-name {
       direction: rtl;
       font-family: var(--font-serif-ar);
-      font-size: clamp(28px, 3.6vw, 40px);
+      font-size: clamp(28px, 3.5vw, 42px);
       font-weight: 700;
-      color: var(--gold-bright);
-      margin: 0 0 24px;
-      line-height: 1.25;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      margin: 0 0 18px;
+      color: #c5973c;
+    }
+    body:not(.theme-card-light) .arabic-name {
+      background: linear-gradient(135deg, #FFF6DF 0%, #E4C687 50%, #C29948 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-divider {
-      width: 110px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      margin-bottom: 24px;
+      width: 140px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--royal-mosaic), transparent);
+      margin-bottom: 20px;
+      border-radius: 99px;
     }
 
     .hero-lead {
-      font-size: 16px;
-      line-height: 1.85;
-      color: var(--text-silver);
-      margin: 0 0 34px;
-      max-width: 610px;
-      border-left: 2px solid var(--gold);
-      padding-left: 18px;
+      font-size: 15.5px;
+      line-height: 1.82;
+      color: var(--text-secondary);
+      margin: 0 0 26px;
+      padding: 18px 20px;
+      border-left: 3.5px solid var(--gold);
+      border-radius: 0 16px 16px 0;
     }
 
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: 11px; }
 
-    /* Portrait Column */
+    /* 3D Portrait Stage with Moroccan Gold Arch Accent */
     .hero-visual {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
+      perspective: 1400px;
     }
 
-    .portrait-stage {
+    .portrait-stage-3d {
       position: relative;
-      width: 340px;
-      height: 340px;
+      width: 325px;
+      height: 325px;
       display: flex;
       align-items: center;
       justify-content: center;
+      transform-style: preserve-3d;
+      transition: transform 0.2s ease-out;
     }
 
-    /* Ambient Royal Blue & Gold Halo behind Portrait */
-    .portrait-stage::before {
+    .portrait-stage-3d::before {
       content: "";
       position: absolute;
-      inset: -18px;
+      inset: -20px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(29, 86, 150, 0.42) 0%, rgba(201, 164, 92, 0.18) 50%, transparent 72%);
-      filter: blur(14px);
+      background: radial-gradient(circle, rgba(27, 105, 222, 0.48) 0%, rgba(212, 175, 99, 0.25) 52%, transparent 72%);
+      filter: blur(18px);
       z-index: 0;
     }
 
-    /* Outer Ornamental Ring */
     .portrait-ring-outer {
       position: relative;
       z-index: 1;
-      width: 100%;
-      height: 100%;
+      width: 308px;
+      height: 308px;
       border-radius: 50%;
-      padding: 10px;
-      border: 1px solid var(--gold-border-strong);
-      background: linear-gradient(145deg, rgba(201, 164, 92, 0.16), rgba(10, 22, 40, 0.85));
-      box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.65),
-        inset 0 0 24px rgba(201, 164, 92, 0.22);
+      padding: 9px;
+      border: 2px solid var(--gold-bright);
+      background: linear-gradient(145deg, #1659be, #071e46);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.65), 0 0 0 4px rgba(212, 175, 99, 0.25);
     }
 
     .portrait {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
       border-radius: 50%;
-      border: 2.5px solid var(--gold);
+      border: 2.5px solid var(--gold-bright);
       display: block;
-      background-color: var(--bg-navy);
+      background-color: #081b3a;
     }
 
-    /* Floating Official Cabinet Crest Seal */
     .floating-crest {
       position: absolute;
-      bottom: 8px;
-      right: 8px;
-      z-index: 3;
+      bottom: 6px;
+      right: 6px;
+      z-index: 4;
       width: 82px;
       height: 82px;
       border-radius: 50%;
       padding: 4px;
-      background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(135deg, #FFF3D1, #D4AF63, #8C6620);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.65);
+      transform: translateZ(35px);
     }
 
     .floating-crest img {
@@ -439,720 +410,523 @@
       object-fit: contain;
       background: #ffffff;
       border-radius: 50%;
-      padding: 4px;
+      padding: 3px;
       display: block;
     }
 
-    /* ================= LUXURY BUTTON SYSTEM ================= */
+    /* ================= TRUST PILLARS RIBBON ================= */
+    .trust-ribbon {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .trust-pill {
+      padding: 14px 16px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .trust-pill-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-pill-icon svg { width: 18px; height: 18px; stroke: currentColor; }
+    .trust-pill-text strong { display: block; font-size: 12.5px; color: var(--text-primary); }
+    .trust-pill-text span { font-size: 11px; color: var(--text-muted); }
+
+    /* ================= 3D REAL NFC CARD SHOWCASE (RECTO & VERSO) ================= */
+    .nfc-showcase-bar {
+      margin-top: 38px;
+      padding: 30px;
+      border-radius: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      align-items: center;
+      gap: 32px;
+      border: 2px solid var(--gold-border-strong);
+    }
+
+    .nfc-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0b2d66, #1659be);
+      border: 1px solid var(--gold-bright);
+      color: var(--gold-bright);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .nfc-showcase-title {
+      font-family: var(--font-serif-fr);
+      font-size: clamp(23px, 2.8vw, 31px);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+
+    .nfc-showcase-desc {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0 0 18px;
+    }
+
+    .nfc-controls-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .nfc-3d-stage {
+      perspective: 1600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nfc-3d-flipper {
+      width: 100%;
+      max-width: 425px;
+      aspect-ratio: 85.6 / 53.98;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+    .nfc-3d-flipper.is-flipped { transform: rotateY(180deg); }
+
+    .nfc-3d-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+      border: 2.5px solid var(--gold-bright);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.65), 0 0 22px rgba(27, 105, 222, 0.35);
+      background: #ffffff;
+    }
+    .nfc-3d-face.face-back { transform: rotateY(180deg); }
+    .nfc-3d-face img.real-card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Exact Vector Replica Fallback Matching Uploaded Card Design */
+    .card-replica {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      direction: ltr;
+      overflow: hidden;
+    }
+    .card-replica::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 19%;
+      background: linear-gradient(90deg, #072969 0%, #1659be 50%, #072969 100%);
+      border-top: 3px solid #d4af63;
+    }
+
+    .nfc-hint-caption {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ================= BUTTONS ================= */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      min-height: 52px;
-      padding: 13px 24px;
-      border-radius: 3px;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 13px;
       text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s ease;
       cursor: pointer;
       font-family: inherit;
-      position: relative;
-      overflow: hidden;
+      border: none;
     }
+    .btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+    .btn:hover { transform: translateY(-2px); }
 
-    .btn svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      transition: transform 0.28s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn:hover svg {
-      transform: scale(1.08);
-    }
-
-    /* Gold Solid Executive Button */
     .btn-gold {
-      background: linear-gradient(135deg, #e5c888 0%, #c9a45c 50%, #ae883d 100%);
-      color: #060d18;
-      border: 1px solid var(--gold-bright);
-      box-shadow: 0 8px 25px rgba(201, 164, 92, 0.28);
+      background: linear-gradient(135deg, #FFF3D1 0%, #D4AF63 50%, #9E782F 100%);
+      color: #040b18;
+      border: 1px solid #FFF6DF;
+      box-shadow: var(--shadow-gold);
     }
+    .btn-gold svg { stroke: #040b18; }
 
-    .btn-gold svg {
-      stroke: #060d18;
+    .btn-royal {
+      background: linear-gradient(135deg, #1b69de 0%, #0b2f6a 100%);
+      color: #ffffff;
+      border: 1.5px solid var(--gold-bright);
+      box-shadow: 0 10px 25px rgba(18, 78, 168, 0.4);
     }
+    .btn-royal svg { stroke: var(--gold-bright); }
 
-    .btn-gold:hover {
-      background: linear-gradient(135deg, #f0d79e 0%, #d4b06a 55%, #b89246 100%);
-      box-shadow: 0 12px 32px rgba(201, 164, 92, 0.42);
-    }
-
-    /* Navy & Gold Outlined Button */
-    .btn-outline-gold {
-      background: rgba(14, 29, 50, 0.72);
-      color: var(--text-white);
-      border: 1px solid var(--gold-border-strong);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-outline-gold svg {
-      stroke: var(--gold-bright);
-    }
-
-    .btn-outline-gold:hover {
-      background: rgba(201, 164, 92, 0.15);
-      border-color: var(--gold-bright);
-      color: var(--gold-bright);
-    }
-
-    /* Tasteful Luxury Emerald WhatsApp Button */
     .btn-whatsapp {
-      background: linear-gradient(135deg, rgba(17, 68, 48, 0.85) 0%, rgba(10, 42, 31, 0.92) 100%);
-      color: var(--text-white);
-      border: 1px solid var(--emerald-border);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(135deg, #115e40 0%, #093524 100%);
+      color: #ffffff;
+      border: 1.5px solid var(--emerald-border);
     }
+    .btn-whatsapp svg { stroke: var(--emerald-light); }
 
-    .btn-whatsapp svg {
-      stroke: var(--emerald-light);
+    .btn-outline-gold {
+      background: rgba(14, 34, 68, 0.82);
+      color: #ffffff;
+      border: 1.5px solid var(--gold-border-strong);
     }
+    .btn-outline-gold svg { stroke: var(--gold-bright); }
 
-    .btn-whatsapp:hover {
-      background: linear-gradient(135deg, rgba(22, 88, 62, 0.95) 0%, rgba(14, 56, 41, 0.98) 100%);
-      border-color: var(--emerald-light);
-      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.22);
-    }
-
-    /* ================= SECTION HEADERS ================= */
-    .section {
-      padding: 72px 0;
-      position: relative;
-      border-bottom: 1px solid rgba(201, 164, 92, 0.18);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-ornament {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .section-ornament-line {
-      width: 44px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold));
-    }
-
-    .section-ornament-line.right {
-      background: linear-gradient(90deg, var(--gold), transparent);
-    }
-
-    .section-ornament-diamond {
-      width: 7px;
-      height: 7px;
-      background: var(--gold);
-      transform: rotate(45deg);
-    }
-
+    /* ================= SECTIONS & GRIDS ================= */
+    .section { padding: 68px 0; border-bottom: 1px solid var(--gold-border); }
+    .section-header { text-align: center; margin-bottom: 42px; }
+    .section-ornament { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .section-ornament-line { width: 48px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .section-ornament-line.right { background: linear-gradient(90deg, var(--gold), transparent); }
+    .section-ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
     .section-title {
       font-family: var(--font-serif-fr);
-      font-size: clamp(28px, 3.6vw, 40px);
-      font-weight: 600;
-      color: var(--text-white);
+      font-size: clamp(26px, 3.4vw, 40px);
+      font-weight: 700;
+      color: var(--text-primary);
       margin: 0;
-      letter-spacing: 0.03em;
     }
 
-    /* ================= BIOGRAPHY SECTION (3 ARCHITECTURAL PILLARS) ================= */
-    .bio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
+    /* 6 Expertise Domains Matrix & 3 Process Steps & 3 Bio Cards */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 
-    .bio-card {
-      background: linear-gradient(180deg, rgba(16, 34, 60, 0.82) 0%, rgba(9, 20, 36, 0.92) 100%);
-      border: 1px solid var(--gold-border);
-      border-top: 2px solid var(--gold);
-      border-radius: 4px;
-      padding: 34px 28px;
-      box-shadow: var(--shadow-luxury);
-      position: relative;
+    .card-3d {
+      border-radius: 22px;
+      padding: 26px 24px;
+      border-top: 3px solid var(--gold);
       transition: transform 0.3s ease, border-color 0.3s ease;
       display: flex;
       flex-direction: column;
-    }
-
-    .bio-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold-border-strong);
-    }
-
-    .bio-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 22px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(201, 164, 92, 0.16);
-    }
-
-    .bio-card-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 4px;
-      background: rgba(201, 164, 92, 0.1);
-      border: 1px solid var(--gold-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .bio-card-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--gold-bright);
-    }
-
-    .bio-card-num {
-      font-family: var(--font-serif-fr);
-      font-size: 26px;
-      font-weight: 600;
-      color: rgba(201, 164, 92, 0.38);
-      letter-spacing: 0.05em;
-    }
-
-    .bio-card p {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--text-cream);
+      gap: 12px;
       text-align: left;
     }
+    .card-3d:hover { transform: translateY(-6px); border-color: var(--gold-bright); }
 
-    /* ================= CONTACT & SERVICES SECTION ================= */
-    .services-layout {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 36px;
-      align-items: stretch;
-    }
+    .card-top { display: flex; align-items: center; justify-content: space-between; }
+    .card-icon { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; }
+    .card-icon svg { width: 22px; height: 22px; stroke: currentColor; }
+    .card-num { font-family: var(--font-serif-fr); font-size: 24px; font-weight: 700; color: var(--gold); }
+    .card-3d h3 { font-family: var(--font-serif-fr); font-size: 20px; font-weight: 700; color: var(--text-primary); margin: 0; }
+    .card-3d p { font-size: 14.5px; line-height: 1.8; color: var(--text-secondary); margin: 0; }
 
-    .panel-box {
-      background: linear-gradient(180deg, rgba(14, 29, 50, 0.82) 0%, rgba(8, 18, 33, 0.94) 100%);
-      border: 1px solid var(--gold-border);
-      border-radius: 4px;
-      padding: 36px 32px;
-      box-shadow: var(--shadow-luxury);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
+    /* Contact & Services 2-Column Layout */
+    .services-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 30px; }
+    .panel-box { border-radius: 24px; padding: 32px 28px; }
     .panel-subtitle {
       font-family: var(--font-serif-fr);
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--gold-bright);
-      margin: 0 0 24px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(201, 164, 92, 0.2);
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--gold-border);
     }
 
-    /* Interactive Action Tiles Grid */
-    .action-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
+    .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .action-tile {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px 18px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.03);
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 15px;
+      background: var(--panel-sub);
       border: 1px solid var(--gold-border);
-      color: var(--text-white);
+      color: var(--text-primary);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       transition: all 0.25s ease;
       cursor: pointer;
       font-family: inherit;
       text-align: left;
     }
-
-    .action-tile-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(201, 164, 92, 0.1);
-      border: 1px solid var(--gold-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all 0.25s ease;
-    }
-
-    .action-tile-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--gold-bright);
-    }
-
-    .action-tile:hover {
-      background: rgba(201, 164, 92, 0.12);
-      border-color: var(--gold-bright);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-gold);
-    }
-
-    .action-tile:hover .action-tile-icon {
-      background: var(--gold);
-      border-color: var(--gold-bright);
-    }
-
-    .action-tile:hover .action-tile-icon svg {
-      stroke: var(--bg-abyss);
-    }
-
-    /* Special styling for WhatsApp Tile */
-    .action-tile.tile-whatsapp {
-      border-color: var(--emerald-border);
-      background: rgba(16, 78, 53, 0.22);
-    }
-
-    .action-tile.tile-whatsapp .action-tile-icon {
-      background: rgba(16, 185, 129, 0.12);
-      border-color: var(--emerald-border);
-    }
-
-    .action-tile.tile-whatsapp .action-tile-icon svg {
-      stroke: var(--emerald-light);
-    }
-
-    .action-tile.tile-whatsapp:hover {
-      background: rgba(16, 78, 53, 0.45);
-      border-color: var(--emerald-light);
-    }
-
-    /* Special styling for Primary vCard Tile */
+    .action-tile:hover { border-color: var(--gold-bright); transform: translateY(-2px); }
+    .action-tile-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .action-tile-icon svg { width: 18px; height: 18px; stroke: currentColor; }
+    .action-tile.full { grid-column: 1 / -1; }
     .action-tile.tile-gold-cta {
       grid-column: 1 / -1;
       justify-content: center;
-      background: linear-gradient(135deg, #e5c888 0%, #c9a45c 55%, #a88238 100%);
-      color: var(--bg-abyss);
-      border-color: var(--gold-bright);
-      padding: 18px 24px;
-      font-size: 14.5px;
-      letter-spacing: 0.05em;
+      background: linear-gradient(135deg, #FFF3D1 0%, #D4AF63 50%, #9E782F 100%);
+      color: #040b18;
+      border-color: #FFF6DF;
+      padding: 16px;
+      font-size: 13.5px;
       text-transform: uppercase;
-      margin-top: 6px;
-      box-shadow: 0 10px 28px rgba(201, 164, 92, 0.28);
+      box-shadow: var(--shadow-gold);
     }
 
-    .action-tile.tile-gold-cta .action-tile-icon {
-      background: rgba(6, 13, 24, 0.14);
-      border-color: rgba(6, 13, 24, 0.3);
-    }
-
-    .action-tile.tile-gold-cta .action-tile-icon svg {
-      stroke: var(--bg-abyss);
-    }
-
-    .action-tile.tile-gold-cta:hover {
-      background: linear-gradient(135deg, #f2d99f 0%, #d4b168 55%, #b89145 100%);
-      box-shadow: 0 14px 34px rgba(201, 164, 92, 0.42);
-    }
-
-    .action-tile.full {
-      grid-column: 1 / -1;
-    }
-
-    /* ================= CONTACT DIRECTORY LIST ================= */
-    .contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
+    .contact-list { display: flex; flex-direction: column; gap: 8px; }
     .contact-row {
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(201, 164, 92, 0.14);
-    }
-
-    .contact-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .contact-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 4px;
-      background: rgba(201, 164, 92, 0.08);
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 15px;
+      background: var(--panel-sub);
       border: 1px solid var(--gold-border);
-      display: flex;
+    }
+    .contact-row-main { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+    .contact-icon { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 17px; height: 17px; stroke: currentColor; }
+    .contact-details { flex: 1; text-align: left; }
+    .contact-details strong { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-deep); font-weight: 800; margin-bottom: 2px; }
+    body:not(.theme-card-light) .contact-details strong { color: var(--gold-bright); }
+    .contact-details a { color: var(--text-primary); text-decoration: none; font-weight: 700; font-size: 14.5px; }
+    .address-text { color: var(--text-secondary); font-size: 13px; line-height: 1.65; }
+
+    .copy-mini-btn {
+      background: rgba(212, 175, 99, 0.15);
+      border: 1px solid var(--gold-border);
+      color: var(--text-primary);
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
       flex-shrink: 0;
-      margin-top: 2px;
+    }
+    .copy-mini-btn:hover { background: var(--gold); color: #040b18; }
+    .copy-mini-btn svg { width: 14px; height: 14px; stroke: currentColor; }
+
+    /* Navigation GPS Bar inside Contact Box */
+    .gps-nav-bar {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
 
-    .contact-icon svg {
-      width: 17px;
-      height: 17px;
-      stroke: var(--gold-bright);
-    }
-
-    .contact-details {
-      flex: 1;
-      text-align: left;
-    }
-
-    .contact-details strong {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .contact-details a {
-      color: var(--text-white);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: color 0.2s ease;
-      display: inline-block;
-    }
-
-    .contact-details a:hover {
-      color: var(--gold-bright);
-    }
-
-    .address-text {
-      color: var(--text-cream);
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    /* ================= FOOTER ================= */
-    .footer {
-      background: #040911;
-      border-top: 1px solid var(--gold-border);
-      padding: 36px 24px;
-      text-align: center;
-    }
-
-    .footer-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
+    /* ================= MODALS ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(3, 8, 20, 0.84);
+      backdrop-filter: blur(14px);
+      display: none;
       align-items: center;
-      gap: 14px;
+      justify-content: center;
+      padding: 16px;
     }
-
-    .footer-logo {
-      width: 44px;
-      height: 44px;
+    .modal-backdrop.is-open { display: flex; }
+    .modal-card {
+      width: 100%;
+      max-width: 540px;
+      border-radius: 24px;
+      padding: 28px 24px;
+      border: 2px solid var(--gold-bright);
+      position: relative;
+      max-height: 92vh;
+      overflow-y: auto;
+      background: #07142b;
+      color: #FAF8F5;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: #ffffff;
-      padding: 3px;
-      border: 1.5px solid var(--gold);
-      object-fit: contain;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--gold-border);
+      color: #fff;
+      cursor: pointer;
     }
-
-    .footer-text {
-      color: var(--text-silver);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ================= ARABIC (RTL) LAYOUT ADAPTATION ================= */
-    body.arabic {
-      font-family: var(--font-sans-ar);
-      direction: rtl;
-    }
-
-    body.arabic .brand-name {
-      font-family: var(--font-serif-ar);
-      font-size: 21px;
-      letter-spacing: 0;
-    }
-
-    body.arabic .brand-sub,
-    body.arabic .nav-links a,
-    body.arabic .title-badge,
-    body.arabic .barreau-badge,
-    body.arabic .btn,
-    body.arabic .action-tile.tile-gold-cta,
-    body.arabic .contact-details strong,
-    body.arabic .footer-text {
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    body.arabic .nav-links a {
-      font-size: 14px;
-    }
-
-    body.arabic .title-badge,
-    body.arabic .barreau-badge {
+    body.arabic .modal-close { right: auto; left: 16px; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { margin-bottom: 13px; text-align: left; }
+    body.arabic .form-group { text-align: right; }
+    .form-label { display: block; font-size: 11.5px; font-weight: 700; color: var(--gold-bright); margin-bottom: 5px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 11px;
+      background: rgba(3, 9, 20, 0.9);
+      border: 1px solid var(--gold-border);
+      color: #fff;
+      font-family: inherit;
       font-size: 13.5px;
+      outline: none;
     }
 
-    body.arabic .hero-divider {
-      background: linear-gradient(270deg, var(--gold), transparent);
-    }
-
-    body.arabic .hero-lead {
-      border-left: none;
-      padding-left: 0;
-      border-right: 2px solid var(--gold);
-      padding-right: 18px;
-      font-size: 16.5px;
-      line-height: 2;
-    }
-
-    body.arabic .floating-crest {
-      right: auto;
-      left: 8px;
-    }
-
-    body.arabic .section-title,
-    body.arabic .panel-subtitle {
-      font-family: var(--font-serif-ar);
-      letter-spacing: 0;
-    }
-
-    body.arabic .bio-card p {
-      text-align: right;
-      font-size: 15.5px;
-      line-height: 2.05;
-    }
-
-    body.arabic .action-tile {
-      text-align: right;
-      font-size: 14.5px;
-    }
-
-    body.arabic .contact-details {
-      text-align: right;
-    }
-
-    body.arabic .contact-details strong {
+    .toast-notify {
+      position: fixed;
+      bottom: 82px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: linear-gradient(135deg, #FFF3D1, #D4AF63);
+      color: #040b18;
+      font-weight: 800;
       font-size: 12.5px;
+      padding: 9px 20px;
+      border-radius: 999px;
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
     }
+    .toast-notify.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    body.arabic .contact-details a {
-      direction: ltr;
-      unicode-bidi: embed;
+    /* Footer & Mobile Dock */
+    .footer {
+      background: #030813;
+      border-top: 1.5px solid var(--gold-border);
+      padding: 36px 20px 100px;
+      text-align: center;
+      color: #C2CFE0;
     }
+    .footer-logo { width: 48px; height: 48px; border-radius: 50%; background: #fff; padding: 3px; border: 2px solid var(--gold-bright); object-fit: contain; }
+    .footer-text { font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-top: 10px; }
 
-    /* ================= RESPONSIVE BREAKPOINTS ================= */
+    .mobile-vip-dock {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 95;
+      width: calc(100% - 22px);
+      max-width: 450px;
+      background: rgba(5, 13, 28, 0.94);
+      backdrop-filter: blur(18px);
+      border: 1.5px solid var(--gold-bright);
+      border-radius: 999px;
+      padding: 6px;
+      display: none;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+    }
+    .dock-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 9px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .dock-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .dock-call { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .dock-call svg { stroke: var(--gold-bright); }
+    .dock-rdv { background: #1659be; color: #fff; }
+    .dock-rdv svg { stroke: var(--gold-bright); }
+    .dock-wa { background: #115e40; color: #fff; }
+    .dock-wa svg { stroke: var(--emerald-light); }
+    .dock-vcard { background: linear-gradient(135deg, #FFF3D1, #D4AF63); color: #040b18; font-weight: 800; }
+    .dock-vcard svg { stroke: #040b18; }
+
+    /* Arabic RTL */
+    body.arabic { font-family: var(--font-sans-ar); direction: rtl; }
+    body.arabic .brand-name, body.arabic .section-title, body.arabic .panel-subtitle, body.arabic .nfc-showcase-title, body.arabic .card-3d h3 { font-family: var(--font-serif-ar); letter-spacing: 0; }
+    body.arabic .brand-sub, body.arabic .nav-links a, body.arabic .btn, body.arabic .contact-details strong, body.arabic .footer-text { letter-spacing: 0; text-transform: none; }
+    body.arabic .hero-lead { border-left: none; border-right: 3.5px solid var(--gold); border-radius: 16px 0 0 16px; }
+    body.arabic .card-3d, body.arabic .trust-pill, body.arabic .action-tile, body.arabic .contact-details { text-align: right; }
+    body.arabic .contact-details a { direction: ltr; unicode-bidi: embed; }
+
     @media (max-width: 992px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 40px 0 56px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 36px;
-      }
-
-      .hero-visual {
-        order: -1;
-      }
-
-      .portrait-stage {
-        width: 260px;
-        height: 260px;
-      }
-
-      .floating-crest {
-        width: 68px;
-        height: 68px;
-      }
-
-      .hero-divider {
-        margin: 0 auto 22px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent) !important;
-      }
-
-      .hero-lead {
-        margin: 0 auto 28px;
-        text-align: center;
-        border-left: none !important;
-        border-right: none !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-
-      .hero-cta-row {
-        justify-content: center;
-      }
-
-      .bio-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .services-layout {
-        grid-template-columns: 1fr;
-      }
+      .nav-links { display: none; }
+      .hero-grid, .nfc-showcase-bar, .grid-3, .services-layout { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { order: -1; }
+      .hero-badges-row, .hero-cta-row, .nfc-controls-row { justify-content: center; }
+      .hero-divider { margin: 0 auto 18px; }
+      .hero-lead { text-align: center; border-radius: 16px !important; border: 1px solid var(--gold-border) !important; }
+      .trust-ribbon { grid-template-columns: 1fr 1fr; }
+      .mobile-vip-dock { display: flex; }
     }
 
     @media (max-width: 560px) {
-      .container {
-        padding: 0 18px;
-      }
-
-      .navbar-inner {
-        padding: 12px 18px;
-        gap: 10px;
-      }
-
-      .brand-sub {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: 16px;
-      }
-
-      .language-switch button {
-        padding: 5px 9px;
-        font-size: 11px;
-      }
-
-      .language-switch button#arButton {
-        font-size: 11.5px;
-      }
-
-      .portrait-stage {
-        width: 224px;
-        height: 224px;
-      }
-
-      .hero-overline {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 6px 12px;
-      }
-
-      .hero-cta-row {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .hero-cta-row .btn {
-        width: 100%;
-      }
-
-      .section {
-        padding: 48px 0;
-      }
-
-      .panel-box {
-        padding: 26px 20px;
-      }
-
-      .action-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .action-tile.full,
-      .action-tile.tile-gold-cta {
-        grid-column: auto;
-      }
+      .brand-sub, .hide-xs { display: none; }
+      .trust-ribbon, .action-grid, .form-grid-2, .gps-nav-bar { grid-template-columns: 1fr; }
+      .hero-cta-row { flex-direction: column; width: 100%; }
+      .hero-cta-row .btn { width: 100%; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ================= TOP HEADER ================= -->
+  <!-- ================= HEADER ================= -->
   <header class="navbar">
     <div class="navbar-inner">
       <a href="#" class="brand-identity">
         <div class="nav-logo-ring">
-          <img class="logo" src="logo.jpeg.png" alt="Logo du cabinet" data-alt-fr="Logo du cabinet" data-alt-ar="شعار المكتب" data-alt-en="Law Firm Logo">
+          <img class="logo" src="logo.jpeg.png" alt="Logo du cabinet">
         </div>
-        <div class="brand-text">
-          <span class="brand-name"
-                data-fr="Maître Houssam ED-Daky"
-                data-ar="الأستاذ حسام الداكي"
-                data-en="Maître Houssam ED-Daky">
-            Maître Houssam ED-Daky
-          </span>
-          <span class="brand-sub"
-                data-fr="Avocat au Barreau de Meknès"
-                data-ar="محامٍ بهيئة المحامين بمكناس"
-                data-en="Attorney at the Meknès Bar">
-            Avocat au Barreau de Meknès
-          </span>
+        <div>
+          <span class="brand-name" data-fr="Maître Houssam ED-Daky" data-ar="الأستاذ حسام الدّاكي" data-en="Maître Houssam ED-Daky">Maître Houssam ED-Daky</span>
+          <span class="brand-sub" data-fr="Avocat au Barreau de Meknès" data-ar="محامٍ بهيئة المحامين بمكناس" data-en="Attorney at the Meknès Bar">Avocat au Barreau de Meknès</span>
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Navigation principale" data-aria-fr="Navigation principale" data-aria-ar="التنقل الرئيسي" data-aria-en="Main navigation">
-        <a href="#presentation"
-           data-fr="Présentation professionnelle"
-           data-ar="التعريف المهني"
-           data-en="Professional Profile">
-          Présentation professionnelle
-        </a>
-        <a href="#contact-services"
-           data-fr="Contact & Services"
-           data-ar="التواصل والخدمات"
-           data-en="Contact & Services">
-          Contact & Services
-        </a>
+      <nav class="nav-links">
+        <a href="#carte-nfc" data-fr="Carte NFC 3D" data-ar="بطاقة NFC 3D" data-en="3D NFC Card">Carte NFC 3D</a>
+        <a href="#domaines" data-fr="Compétences" data-ar="التخصصات" data-en="Expertise">Compétences</a>
+        <a href="#processus" data-fr="Accompagnement" data-ar="مسار المواكبة" data-en="Process">Accompagnement</a>
+        <a href="#presentation" data-fr="Présentation" data-ar="التعريف المهني" data-en="Profile">Présentation</a>
+        <a href="#contact-services" data-fr="Contact" data-ar="التواصل" data-en="Contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <div class="language-switch" role="group" aria-label="Sélecteur de langue" data-aria-fr="Sélecteur de langue" data-aria-ar="محدد اللغة" data-aria-en="Language selector">
-          <button id="frButton" class="active" type="button" onclick="setLanguage('fr')">
-            Français
-          </button>
-          <button id="arButton" type="button" onclick="setLanguage('ar')">
-            العربية
-          </button>
-          <button id="enButton" type="button" onclick="setLanguage('en')">
-            English
-          </button>
+        <!-- Theme Toggle: Switch between Dark Sapphire & Physical Card White/Blue Theme -->
+        <button type="button" class="icon-pill-btn" onclick="toggleCardTheme()" title="Changer le thème">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+          <span class="hide-xs" data-fr="Style Carte" data-ar="مظهر البطاقة" data-en="Card Style">Style Carte</span>
+        </button>
+
+        <button type="button" class="icon-pill-btn" onclick="openQrModal()">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span class="hide-xs">QR</span>
+        </button>
+
+        <div class="language-switch" role="group">
+          <button id="frButton" class="active" type="button" onclick="setLanguage('fr')">FR</button>
+          <button id="arButton" type="button" onclick="setLanguage('ar')">العربية</button>
+          <button id="enButton" type="button" onclick="setLanguage('en')">EN</button>
         </div>
       </div>
     </div>
@@ -1162,306 +936,356 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section class="hero">
-      <!-- Subtle Scales of Justice Architectural Watermark -->
-      <svg class="hero-watermark" viewBox="0 0 24 24" fill="none" stroke="#c9a45c" stroke-width="0.6" aria-hidden="true">
-        <path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zm14 0l-3 7h6l-3-7zM8 21h8"/>
-      </svg>
-
       <div class="container">
         <div class="hero-grid">
 
           <div class="hero-text">
-            <div class="hero-overline">
-              <span class="hero-overline-dot"></span>
-              <span class="title-badge" data-fr="Avocat" data-ar="محامٍ" data-en="Attorney at Law">Avocat</span>
-              <span class="title-separator">·</span>
-              <span class="barreau-badge"
-                    data-fr="Au Barreau de Meknès"
-                    data-ar="بهيئة المحامين بمكناس"
-                    data-en="At the Meknès Bar">
-                Au Barreau de Meknès
-              </span>
+            <div class="hero-badges-row">
+              <div class="hero-overline">
+                <span data-fr="Avocat · Au Barreau de Meknès" data-ar="محامٍ · بهيئة المحامين بمكناس" data-en="Attorney at Law · Meknès Bar">Avocat · Au Barreau de Meknès</span>
+              </div>
+              <div class="live-status-pill">
+                <span class="status-dot"></span>
+                <span id="liveStatusText" data-fr="Cabinet disponible · Sur rendez-vous" data-ar="المكتب متاح · باستقبال وموعد مسبق" data-en="Office Available · By Appointment">Cabinet disponible · Sur rendez-vous</span>
+              </div>
             </div>
 
             <h1>Maître Houssam ED-Daky</h1>
-            <div class="arabic-name">الأستاذ حسام الداكي</div>
-
+            <div class="arabic-name">الأستاذ حسام الدّاكي</div>
             <div class="hero-divider"></div>
 
-            <p class="hero-lead" id="heroLead"></p>
+            <p class="hero-lead glass-panel" id="heroLead"></p>
 
             <div class="hero-cta-row">
               <a class="btn btn-gold" href="tel:+212662649697">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <span data-fr="Appeler" data-ar="اتصال" data-en="Call">Appeler</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span data-fr="Appeler" data-ar="اتصال مباشر" data-en="Call Now">Appeler</span>
               </a>
 
-              <a class="btn btn-whatsapp"
-                 href="https://wa.me/212613498521"
-                 target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+              <button class="btn btn-royal" type="button" onclick="openConsultModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span data-fr="Demander une consultation" data-ar="طلب استشارة أو موعد" data-en="Book Consultation">Demander une consultation</span>
+              </button>
+
+              <a class="btn btn-whatsapp" href="https://wa.me/212613498521" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 <span data-fr="WhatsApp" data-ar="واتساب" data-en="WhatsApp">WhatsApp</span>
               </a>
 
-              <button class="btn btn-outline-gold"
-                      type="button"
-                      onclick="saveContact()">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="8.5" cy="7" r="4"></circle>
-                  <line x1="20" y1="8" x2="20" y2="14"></line>
-                  <line x1="23" y1="11" x2="17" y2="11"></line>
-                </svg>
+              <button class="btn btn-outline-gold" type="button" onclick="saveContact()">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
                 <span data-fr="Enregistrer le contact" data-ar="حفظ جهة الاتصال" data-en="Save Contact">Enregistrer le contact</span>
               </button>
             </div>
           </div>
 
           <div class="hero-visual">
-            <div class="portrait-stage">
+            <div class="portrait-stage-3d" id="tiltStage">
               <div class="portrait-ring-outer">
-                <img class="portrait" src="portrait.jpeg.png" alt="Maître Houssam ED-Daky" data-alt-fr="Maître Houssam ED-Daky" data-alt-ar="الأستاذ حسام الداكي" data-alt-en="Maître Houssam ED-Daky">
+                <img class="portrait" src="portrait.jpeg.png" alt="Maître Houssam ED-Daky">
               </div>
               <div class="floating-crest">
-                <img src="logo.jpeg.png" alt="Sceau du cabinet Maître Houssam ED-Daky" data-alt-fr="Sceau du cabinet Maître Houssam ED-Daky" data-alt-ar="ختم مكتب الأستاذ حسام الداكي" data-alt-en="Official Seal of Maître Houssam ED-Daky Law Firm">
+                <img src="logo.jpeg.png" alt="Sceau du cabinet">
               </div>
             </div>
           </div>
 
         </div>
+
+        <!-- ================= 4 TRUST PILLARS RIBBON ================= -->
+        <div class="trust-ribbon">
+          <div class="trust-pill glass-panel">
+            <div class="trust-pill-icon orb-3d-sapphire">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zm14 0l-3 7h6l-3-7zM8 21h8"/></svg>
+            </div>
+            <div class="trust-pill-text">
+              <strong data-fr="Barreau de Meknès" data-ar="هيئة المحامين بمكناس" data-en="Meknès Bar Association">Barreau de Meknès</strong>
+              <span data-fr="Représentation & Plaidoirie" data-ar="تمثيل قانوني وترافع قضائي" data-en="Legal & Court Representation">Représentation & Plaidoirie</span>
+            </div>
+          </div>
+
+          <div class="trust-pill glass-panel">
+            <div class="trust-pill-icon orb-3d-sapphire">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="trust-pill-text">
+              <strong data-fr="Portée Nationale & Internationale" data-ar="مواكبة وطنية ودولية" data-en="Domestic & Cross-Border">Portée Nationale & Internationale</strong>
+              <span data-fr="Particuliers, Sociétés & MRE" data-ar="أفراد، مقاولات، مستثمرون و MRE" data-en="Individuals, Companies & Investors">Particuliers, Sociétés & MRE</span>
+            </div>
+          </div>
+
+          <div class="trust-pill glass-panel">
+            <div class="trust-pill-icon orb-3d-sapphire">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="trust-pill-text">
+              <strong data-fr="Secret Professionnel" data-ar="السر المهني التام" data-en="Strict Confidentiality">Secret Professionnel</strong>
+              <span data-fr="Confidentialité & Déontologie" data-ar="سرية مطلقة وأخلاقيات المهنة" data-en="Ethics & Legal Privilege">Confidentialité & Déontologie</span>
+            </div>
+          </div>
+
+          <div class="trust-pill glass-panel">
+            <div class="trust-pill-icon orb-3d-sapphire">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="trust-pill-text">
+              <strong data-fr="Cabinet Trilingue" data-ar="تواصل بثلاث لغات" data-en="Trilingual Practice">Cabinet Trilingue</strong>
+              <span data-fr="Arabe • Français • Anglais" data-ar="العربية • الفرنسية • الإنجليزية" data-en="Arabic • French • English">Arabe • Français • Anglais</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= 3D INTERACTIVE REAL NFC CARD (RECTO / VERSO) ================= -->
+        <div id="carte-nfc" class="nfc-showcase-bar glass-panel">
+          <div class="nfc-showcase-info">
+            <div class="nfc-tag-pill">
+              <span>((( NFC )))</span>
+              <span>•</span>
+              <span data-fr="Identité Visuelle Officielle du Cabinet" data-ar="الهوية البصرية والبطاقة الذكية للمكتب" data-en="Official Cabinet Smart NFC Card">Identité Visuelle Officielle du Cabinet</span>
+            </div>
+
+            <h2 class="nfc-showcase-title" data-fr="Carte de Visite NFC & QR Code (Recto / Verso)" data-ar="بطاقة الزيارة الذكية NFC ورمز QR (الوجه والخلف)" data-en="Official 3D NFC & QR Business Card">Carte de Visite NFC & QR Code (Recto / Verso)</h2>
+
+            <p class="nfc-showcase-desc"
+               data-fr="Retrouvez ici le design exact de la carte physique du cabinet. Cliquez sur la carte pour la retourner en 3D, scanner le QR Code officiel ou enregistrer le contact."
+               data-ar="تجدون هنا التصميم الرسمي المطابق للبطاقة المادية للمكتب. اضغط على البطاقة لقلبها ثلاثياً (الوجه الأمامي والخلفي)، أو مسح رمز QR، أو حفظ جهة الاتصال."
+               data-en="Explore the exact physical NFC card of the law firm. Click the card to flip it in 3D (Front & Back), scan the QR code, or save the contact.">
+              Retrouvez ici le design exact de la carte physique du cabinet. Cliquez sur la carte pour la retourner en 3D, scanner le QR Code officiel ou enregistrer le contact.
+            </p>
+
+            <div class="nfc-controls-row">
+              <button type="button" class="btn btn-gold" onclick="flipNfcCard()">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                <span data-fr="Retourner la carte 3D (Recto / Verso)" data-ar="قلب البطاقة 3D (الوجه / الخلف)" data-en="Flip 3D Card (Front / Back)">Retourner la carte 3D (Recto / Verso)</span>
+              </button>
+
+              <button type="button" class="btn btn-outline-gold" onclick="openQrModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                <span data-fr="Partager la carte" data-ar="مشاركة البطاقة" data-en="Share Card">Partager la carte</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="nfc-3d-stage">
+            <div class="nfc-3d-flipper" id="nfcCardFlipper" onclick="flipNfcCard()">
+              
+              <!-- RECTO FACE -->
+              <div class="nfc-3d-face face-front">
+                <img class="real-card-img"
+                     src="Sans titre (85.6 x 53.98 mm)_2.jpg"
+                     alt="Recto Carte NFC Maître Houssam ED-Daky"
+                     onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='Sans titre (85.6 x 53.98 mm).jpg';}else if(!this.dataset.t2){this.dataset.t2=1;this.src='recto.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+                <div class="card-replica" style="display:none;">
+                  <img src="logo.jpeg.png" alt="" style="width:33%;max-height:76%;object-fit:contain;">
+                  <div style="width:1.5px;height:66%;background:linear-gradient(180deg,transparent,#d4af63,transparent);"></div>
+                  <div style="flex:1;text-align:center;padding:0 10px 14px;">
+                    <div style="font-family:var(--font-serif-ar);font-size:21px;font-weight:700;color:#081c3a;">الأستاذ حسام الدّاكي</div>
+                    <div style="font-family:var(--font-serif-fr);font-size:14px;font-weight:700;color:#081c3a;margin-top:2px;">MAÎTRE HOUSSAM ED-DAKY</div>
+                    <div style="font-size:9px;font-weight:800;color:#8a6823;margin-top:5px;letter-spacing:0.08em;">AVOCAT AU BARREAU DE MEKNÈS</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VERSO FACE -->
+              <div class="nfc-3d-face face-back">
+                <img class="real-card-img"
+                     src="Sans titre (85.6 x 53.98 mm) verso_2.jpg"
+                     alt="Verso Carte NFC Maître Houssam ED-Daky"
+                     onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='Sans titre (85.6 x 53.98 mm) verso.jpg';}else if(!this.dataset.t2){this.dataset.t2=1;this.src='verso.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+                <div class="card-replica" style="display:none;background:linear-gradient(110deg,#09337d 0%,#1659be 52%,#ffffff 52.5%);">
+                  <div style="width:48%;text-align:center;color:#fff;margin-bottom:14px;">
+                    <div style="font-size:22px;font-weight:800;color:#f5dda2;">((( NFC )))</div>
+                    <div style="font-size:11px;margin-top:6px;">Approchez votre téléphone</div>
+                  </div>
+                  <div style="width:46%;text-align:center;margin-bottom:14px;">
+                    <div style="font-size:11px;font-weight:800;color:#081c3a;">Scannez le code QR</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="nfc-hint-caption" data-fr="↻ Touchez la carte pour basculer entre Recto et Verso" data-ar="↻ المس البطاقة لقلبها بين الوجه الأمامي والخلفي" data-en="↻ Tap the card to flip between Front and Back">↻ Touchez la carte pour basculer entre Recto et Verso</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 6 DOMAINES DE COMPÉTENCE ================= -->
+    <section class="section" id="domaines">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-ornament"><span class="section-ornament-line"></span><span class="section-ornament-diamond"></span><span class="section-ornament-line right"></span></div>
+          <h2 class="section-title" data-fr="Domaines de Compétence & d'Intervention" data-ar="مجالات التخصص والمواكبة القانونية" data-en="Areas of Legal Expertise">Domaines de Compétence & d'Intervention</h2>
+        </div>
+        <div class="grid-3" id="expertiseGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= 3-STEP LEGAL ACCOMPANIMENT PROCESS ================= -->
+    <section class="section" id="processus">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-ornament"><span class="section-ornament-line"></span><span class="section-ornament-diamond"></span><span class="section-ornament-line right"></span></div>
+          <h2 class="section-title" data-fr="Méthodologie & Parcours d'Accompagnement" data-ar="منهجية العمل ومسار المواكبة القانونية" data-en="Legal Support Process & Methodology">Méthodologie & Parcours d'Accompagnement</h2>
+        </div>
+        <div class="grid-3" id="processGrid"></div>
       </div>
     </section>
 
     <!-- ================= BIOGRAPHY SECTION ================= -->
     <section class="section" id="presentation">
       <div class="container">
-
         <div class="section-header">
-          <div class="section-ornament" aria-hidden="true">
-            <span class="section-ornament-line"></span>
-            <span class="section-ornament-diamond"></span>
-            <span class="section-ornament-line right"></span>
-          </div>
-          <h2 class="section-title"
-              data-fr="Présentation professionnelle"
-              data-ar="التعريف المهني"
-              data-en="Professional Profile">
-            Présentation professionnelle
-          </h2>
+          <div class="section-ornament"><span class="section-ornament-line"></span><span class="section-ornament-diamond"></span><span class="section-ornament-line right"></span></div>
+          <h2 class="section-title" data-fr="Présentation professionnelle" data-ar="التعريف المهني" data-en="Professional Profile">Présentation professionnelle</h2>
         </div>
-
-        <div class="bio-grid" id="bio"></div>
-
+        <div class="grid-3" id="bio"></div>
       </div>
     </section>
 
     <!-- ================= CONTACT & SERVICES SECTION ================= -->
     <section class="section" id="contact-services">
       <div class="container">
-
         <div class="section-header">
-          <div class="section-ornament" aria-hidden="true">
-            <span class="section-ornament-line"></span>
-            <span class="section-ornament-diamond"></span>
-            <span class="section-ornament-line right"></span>
-          </div>
-          <h2 class="section-title"
-              data-fr="Contact & Services"
-              data-ar="التواصل والخدمات"
-              data-en="Contact & Services">
-            Contact & Services
-          </h2>
+          <div class="section-ornament"><span class="section-ornament-line"></span><span class="section-ornament-diamond"></span><span class="section-ornament-line right"></span></div>
+          <h2 class="section-title" data-fr="Contact, Consultation & Localisation" data-ar="التواصل، الاستشارة وموقع المكتب" data-en="Contact, Consultation & Office Location">Contact, Consultation & Localisation</h2>
         </div>
 
         <div class="services-layout">
 
-          <!-- Left Column: Interactive Luxury Buttons -->
-          <div class="panel-box">
-            <div>
-              <h3 class="panel-subtitle"
-                  data-fr="Contact & Services"
-                  data-ar="التواصل والخدمات"
-                  data-en="Contact & Services">
-                Contact & Services
-              </h3>
+          <!-- Left Column: Interactive Action Tiles -->
+          <div class="panel-box glass-panel">
+            <h3 class="panel-subtitle" data-fr="Canaux Directs & Services" data-ar="قنوات التواصل والخدمات المباشرة" data-en="Direct Channels & Services">Canaux Directs & Services</h3>
 
-              <div class="action-grid">
+            <div class="action-grid">
+              <a class="action-tile" href="tel:+212662649697">
+                <div class="action-tile-icon orb-3d-sapphire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <span data-fr="Appeler (Mobile)" data-ar="اتصال (المحمول)" data-en="Call (Mobile)">Appeler (Mobile)</span>
+              </a>
 
-                <a class="action-tile" href="tel:+212662649697">
-                  <div class="action-tile-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                  </div>
-                  <span data-fr="Appeler" data-ar="اتصال" data-en="Call">Appeler</span>
-                </a>
+              <a class="action-tile" href="tel:+212532723374">
+                <div class="action-tile-icon orb-3d-sapphire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <span data-fr="Appeler (Fixe Cabinet)" data-ar="اتصال (ثابت المكتب)" data-en="Call (Office Fixe)">Appeler (Fixe Cabinet)</span>
+              </a>
 
-                <a class="action-tile tile-whatsapp"
-                   href="https://wa.me/212613498521"
-                   target="_blank" rel="noopener">
-                  <div class="action-tile-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                  </div>
-                  <span data-fr="WhatsApp" data-ar="واتساب" data-en="WhatsApp">WhatsApp</span>
-                </a>
+              <button class="action-tile full" type="button" onclick="openConsultModal()">
+                <div class="action-tile-icon orb-3d-sapphire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <span data-fr="Planifier une consultation juridique / Rendez-vous" data-ar="حجز موعد أو طلب استشارة قانونية مفصلة" data-en="Schedule a Legal Consultation / Appointment">Planifier une consultation juridique / Rendez-vous</span>
+              </button>
 
-                <a class="action-tile full"
-                   href="https://maps.app.goo.gl/TVmGBoyNB2NkteZ19"
-                   target="_blank" rel="noopener">
-                  <div class="action-tile-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                  </div>
-                  <span data-fr="Localisation du cabinet" data-ar="موقع المكتب" data-en="Office Location">Localisation du cabinet</span>
-                </a>
+              <a class="action-tile full" href="https://wa.me/212613498521" target="_blank" rel="noopener">
+                <div class="action-tile-icon orb-3d-sapphire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <span data-fr="Messagerie Directe WhatsApp" data-ar="مراسلة فورية عبر واتساب" data-en="Direct WhatsApp Messaging">Messagerie Directe WhatsApp</span>
+              </a>
 
-                <a class="action-tile full"
-                   href="mailto:Houssameddaky@gmail.com">
-                  <div class="action-tile-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </div>
-                  <span data-fr="Envoyer un e-mail" data-ar="إرسال بريد إلكتروني" data-en="Send an Email">Envoyer un e-mail</span>
-                </a>
+              <a class="action-tile full" href="mailto:Houssameddaky@gmail.com">
+                <div class="action-tile-icon orb-3d-sapphire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <span data-fr="Envoyer un e-mail officiel" data-ar="إرسال بريد إلكتروني رسمي" data-en="Send an Official Email">Envoyer un e-mail officiel</span>
+              </a>
 
-                <a class="action-tile full"
-                   href="https://search.google.com/local/writereview?placeid=ChIJzwx6RgBFoA0REEonJ8VrNq8"
-                   target="_blank" rel="noopener">
-                  <div class="action-tile-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                  </div>
-                  <span data-fr="Avis Google" data-ar="تقييم المكتب على Google" data-en="Google Reviews">Avis Google</span>
-                </a>
+              <a class="action-tile full" href="https://search.google.com/local/writereview?placeid=ChIJzwx6RgBFoA0REEonJ8VrNq8" target="_blank" rel="noopener">
+                <div class="action-tile-icon orb-3d-sapphire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span data-fr="Consulter ou laisser un Avis Google" data-ar="تقييم المكتب على Google" data-en="Google Reviews">Consulter ou laisser un Avis Google</span>
+              </a>
 
-                <button class="action-tile tile-gold-cta"
-                        type="button"
-                        onclick="saveContact()">
-                  <div class="action-tile-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="8.5" cy="7" r="4"></circle>
-                      <line x1="20" y1="8" x2="20" y2="14"></line>
-                      <line x1="23" y1="11" x2="17" y2="11"></line>
-                    </svg>
-                  </div>
-                  <span data-fr="Enregistrer le contact" data-ar="حفظ جهة الاتصال" data-en="Save Contact">Enregistrer le contact</span>
-                </button>
-
-              </div>
+              <button class="action-tile tile-gold-cta" type="button" onclick="saveContact()">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" width="20" height="20"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                <span data-fr="Enregistrer le contact dans le téléphone (vCard)" data-ar="حفظ جهة الاتصال الكاملة في الهاتف (vCard)" data-en="Save Full Contact to Phone (vCard)">Enregistrer le contact dans le téléphone (vCard)</span>
+              </button>
             </div>
           </div>
 
-          <!-- Right Column: Structured Contact Details -->
-          <div class="panel-box">
-            <div>
-              <h3 class="panel-subtitle"
-                  data-fr="Au Barreau de Meknès"
-                  data-ar="بهيئة المحامين بمكناس"
-                  data-en="At the Meknès Bar">
-                Au Barreau de Meknès
-              </h3>
+          <!-- Right Column: Coordinates, Copy & GPS Navigation (Google Maps + Waze) -->
+          <div class="panel-box glass-panel">
+            <h3 class="panel-subtitle" data-fr="Coordonnées & Accès au Cabinet (Meknès)" data-ar="بيانات الاتصال وعنوان المكتب (مكناس)" data-en="Office Coordinates & Access (Meknès)">Coordonnées & Accès au Cabinet (Meknès)</h3>
 
-              <div class="contact-list">
-
-                <div class="contact-row">
-                  <div class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                    </svg>
-                  </div>
+            <div class="contact-list">
+              <div class="contact-row">
+                <div class="contact-row-main">
+                  <div class="contact-icon orb-3d-sapphire"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
                   <div class="contact-details">
-                    <strong data-fr="Téléphone :" data-ar="الهاتف :" data-en="Phone:">Téléphone :</strong>
+                    <strong data-fr="Téléphone Mobile :" data-ar="الهاتف المحمول :" data-en="Mobile Phone:">Téléphone Mobile :</strong>
                     <a href="tel:+212662649697">+212 6 62 64 96 97</a>
                   </div>
                 </div>
+                <button type="button" class="copy-mini-btn" onclick="copyText('+212662649697')" title="Copier"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+              </div>
 
-                <div class="contact-row">
-                  <div class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                  </div>
+              <div class="contact-row">
+                <div class="contact-row-main">
+                  <div class="contact-icon orb-3d-sapphire"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
                   <div class="contact-details">
-                    <strong data-fr="Fixe :" data-ar="الهاتف الثابت :" data-en="Office Phone:">Fixe :</strong>
+                    <strong data-fr="Fixe du Cabinet :" data-ar="الهاتف الثابت :" data-en="Office Landline:">Fixe du Cabinet :</strong>
                     <a href="tel:+212532723374">+212 5 32 72 33 74</a>
                   </div>
                 </div>
+                <button type="button" class="copy-mini-btn" onclick="copyText('+212532723374')" title="Copier"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+              </div>
 
-                <div class="contact-row">
-                  <div class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                  </div>
+              <div class="contact-row">
+                <div class="contact-row-main">
+                  <div class="contact-icon orb-3d-sapphire"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
                   <div class="contact-details">
                     <strong data-fr="WhatsApp :" data-ar="واتساب :" data-en="WhatsApp:">WhatsApp :</strong>
                     <a href="https://wa.me/212613498521" target="_blank" rel="noopener">+212 6 13 49 85 21</a>
                   </div>
                 </div>
+                <button type="button" class="copy-mini-btn" onclick="copyText('+212613498521')" title="Copier"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+              </div>
 
-                <div class="contact-row">
-                  <div class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </div>
+              <div class="contact-row">
+                <div class="contact-row-main">
+                  <div class="contact-icon orb-3d-sapphire"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                   <div class="contact-details">
-                    <strong data-fr="Email :" data-ar="البريد الإلكتروني :" data-en="Email:">Email :</strong>
-                    <a href="mailto:Houssameddaky@gmail.com">
-                      Houssameddaky@gmail.com
-                    </a>
+                    <strong data-fr="E-mail Officiel :" data-ar="البريد الإلكتروني :" data-en="Official Email:">E-mail Officiel :</strong>
+                    <a href="mailto:Houssameddaky@gmail.com">Houssameddaky@gmail.com</a>
                   </div>
                 </div>
+                <button type="button" class="copy-mini-btn" onclick="copyText('Houssameddaky@gmail.com')" title="Copier"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+              </div>
 
-                <div class="contact-row">
-                  <div class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                  </div>
+              <div class="contact-row">
+                <div class="contact-row-main">
+                  <div class="contact-icon orb-3d-sapphire"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                   <div class="contact-details">
-                    <strong data-fr="Adresse :" data-ar="العنوان :" data-en="Address:">Adresse :</strong>
+                    <strong data-fr="Adresse du Cabinet :" data-ar="عنوان المكتب :" data-en="Office Address:">Adresse du Cabinet :</strong>
                     <div class="address-text">
-                      <span data-fr="3ème étage, Bureau N°6 VN, Résidence D,"
-                            data-ar="الطابق الثالث، مكتب رقم 6 VN، إقامة D،"
-                            data-en="3rd Floor, Office No. 6 VN, Residence D,">
-                        3ème étage, Bureau N°6 VN, Résidence D,
-                      </span><br>
-                      <span data-fr="Avenue des F.A.R., Rue Doukkala,"
-                            data-ar="شارع القوات المسلحة الملكية، زنقة دكالة،"
-                            data-en="Avenue des F.A.R., Rue Doukkala,">
-                        Avenue des F.A.R., Rue Doukkala,
-                      </span><br>
-                      <span data-fr="Meknès 50000, Maroc"
-                            data-ar="مكناس 50000، المغرب"
-                            data-en="Meknès 50000, Morocco">
-                        Meknès 50000, Maroc
-                      </span>
+                      <span data-fr="3ème étage, Bureau N°6 VN, Résidence D," data-ar="الطابق الثالث، مكتب رقم 6 VN، إقامة D،" data-en="3rd Floor, Office No. 6 VN, Residence D,">3ème étage, Bureau N°6 VN, Résidence D,</span><br>
+                      <span data-fr="Avenue des F.A.R., Rue Doukkala, Meknès 50000, Maroc" data-ar="شارع القوات المسلحة الملكية، زنقة دكالة، مكناس 50000، المغرب" data-en="Avenue des F.A.R., Rue Doukkala, Meknès 50000, Morocco">Avenue des F.A.R., Rue Doukkala, Meknès 50000, Maroc</span>
                     </div>
                   </div>
                 </div>
-
+                <button type="button" class="copy-mini-btn" onclick="copyText('3ème étage, Bureau N°6 VN, Résidence D, Avenue des F.A.R., Rue Doukkala, Meknès 50000, Maroc')" title="Copier"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
               </div>
+            </div>
+
+            <!-- Dual GPS Navigation Buttons: Google Maps & Waze -->
+            <div class="gps-nav-bar">
+              <a href="https://maps.app.goo.gl/TVmGBoyNB2NkteZ19" target="_blank" rel="noopener" class="btn btn-royal" style="min-height:44px;padding:10px 14px;font-size:11.5px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span data-fr="Ouvrir Google Maps" data-ar="فتح في Google Maps" data-en="Open Google Maps">Ouvrir Google Maps</span>
+              </a>
+              <a href="https://waze.com/ul?q=Avenue%20des%20F.A.R.%20Rue%20Doukkala%20Meknes&navigate=yes" target="_blank" rel="noopener" class="btn btn-outline-gold" style="min-height:44px;padding:10px 14px;font-size:11.5px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span data-fr="Itinéraire Waze" data-ar="التوجيه عبر Waze" data-en="Navigate with Waze">Itinéraire Waze</span>
+              </a>
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
 
@@ -1469,17 +1293,155 @@
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
-    <div class="footer-inner">
-      <img class="footer-logo" src="logo.jpeg.png" alt="Logo du cabinet" data-alt-fr="Logo du cabinet" data-alt-ar="شعار المكتب" data-alt-en="Law Firm Logo">
-      <div class="footer-text"
-           data-fr="Maître Houssam ED-Daky · Avocat au Barreau de Meknès"
-           data-ar="الأستاذ حسام الداكي · محامٍ بهيئة المحامين بمكناس"
-           data-en="Maître Houssam ED-Daky · Attorney at the Meknès Bar">
-        Maître Houssam ED-Daky · Avocat au Barreau de Meknès
-      </div>
+    <img class="footer-logo" src="logo.jpeg.png" alt="Logo du cabinet">
+    <div class="footer-text"
+         data-fr="Maître Houssam ED-Daky · Avocat au Barreau de Meknès"
+         data-ar="الأستاذ حسام الدّاكي · محامٍ بهيئة المحامين بمكناس"
+         data-en="Maître Houssam ED-Daky · Attorney at the Meknès Bar">
+      Maître Houssam ED-Daky · Avocat au Barreau de Meknès
     </div>
   </footer>
 
+  <!-- ================= FLOATING MOBILE VIP DOCK ================= -->
+  <div class="mobile-vip-dock">
+    <a href="tel:+212662649697" class="dock-btn dock-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span data-fr="Appeler" data-ar="اتصال" data-en="Call">Appeler</span>
+    </a>
+    <button type="button" onclick="openConsultModal()" class="dock-btn dock-rdv">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span data-fr="Consultation" data-ar="استشارة" data-en="Consult">Consultation</span>
+    </button>
+    <a href="https://wa.me/212613498521" target="_blank" rel="noopener" class="dock-btn dock-wa">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span data-fr="WhatsApp" data-ar="واتساب" data-en="WhatsApp">WhatsApp</span>
+    </a>
+    <button type="button" onclick="saveContact()" class="dock-btn dock-vcard">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.3"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      <span data-fr="vCard" data-ar="حفظ" data-en="Save">vCard</span>
+    </button>
+  </div>
+
+  <!-- ================= MODAL 1: EXPANDED LEGAL CONSULTATION ASSISTANT ================= -->
+  <div class="modal-backdrop" id="consultModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeConsultModal()">✕</button>
+      <h3 class="panel-subtitle" style="margin-top:0;color:#f5dda2;"
+          data-fr="Demande de Consultation / Rendez-vous"
+          data-ar="طلب استشارة قانونية أو تحديد موعد"
+          data-en="Request Legal Consultation / Appointment">
+        Demande de Consultation / Rendez-vous
+      </h3>
+
+      <form onsubmit="submitConsultationWhatsApp(event)">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" data-fr="Nom complet / Société" data-ar="الاسم الكامل أو المقاولة" data-en="Full Name / Company">Nom complet / Société</label>
+            <input type="text" id="clientName" class="form-input" required placeholder="...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-fr="Qualité du demandeur" data-ar="صفة طالب الاستشارة" data-en="Client Category">Qualité du demandeur</label>
+            <select id="clientStatus" class="form-select">
+              <option value="Particulier" data-fr="Particulier (Personne physique)" data-ar="فرد (شخص ذاتي)" data-en="Individual (Private Client)">Particulier (Personne physique)</option>
+              <option value="Entreprise / Société" data-fr="Entreprise / Société / Institution" data-ar="شركة / مقاولة / مؤسسة" data-en="Company / Corporation">Entreprise / Société / Institution</option>
+              <option value="MRE / Investisseur Étranger" data-fr="MRE / Investisseur Étranger" data-ar="مغربي مقيم بالخارج (MRE) أو مستثمر أجنبي" data-en="Moroccan Abroad (MRE) / Foreign Investor">MRE / Investisseur Étranger</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-fr="Domaine juridique concerné (8 Spécialités)" data-ar="مجال القضية أو الاستشارة (8 تخصصات)" data-en="Legal Specialty (8 Practice Areas)">Domaine juridique concerné</label>
+          <select id="clientTopic" class="form-select">
+            <option value="Droit Civil, Immobilier & Foncier" data-fr="1. Droit Civil, Immobilier & Foncier (Contrats, Litiges, Loyers)" data-ar="1. القانون المدني والعقاري (العقود، التحفيظ، الكراء والمنازعات)" data-en="1. Civil & Real Estate Law">1. Droit Civil, Immobilier & Foncier</option>
+            <option value="Droit de la Famille & Statut Personnel" data-fr="2. Droit de la Famille & Statut Personnel (Moudawana, Mineurs)" data-ar="2. قانون الأسرة والأحوال الشخصية (المدونة، حماية القاصرين)" data-en="2. Family Law & Personal Status">2. Droit de la Famille & Statut Personnel</option>
+            <option value="Droit des Affaires & Investissements Étrangers" data-fr="3. Droit des Affaires, Sociétés & Investissements Étrangers" data-ar="3. قانون الأعمال، مواكبة الشركات والاستثمارات الأجنبية" data-en="3. Corporate Law & Foreign Investment">3. Droit des Affaires, Sociétés & Investissements Étrangers</option>
+            <option value="Litiges Commerciaux & Contentieux National/International" data-fr="4. Litiges Commerciaux & Contentieux National / International" data-ar="4. المنازعات التجارية وتسوية النزاعات الوطنية والدولية" data-en="4. Commercial & Cross-Border Litigation">4. Litiges Commerciaux & Contentieux National / International</option>
+            <option value="Droit Pénal & Infractions Financières" data-fr="5. Droit Pénal, Infractions Financières & Criminalité Organisée" data-ar="5. القانون الجنائي، الجرائم المالية والجريمة المنظمة" data-en="5. Criminal Law & Financial Offenses">5. Droit Pénal, Infractions Financières & Criminalité Organisée</option>
+            <option value="Cybercriminalité & Délits Numériques" data-fr="6. Cybercriminalité Internationale & Extorsion Numérique" data-ar="6. الجرائم الإلكترونية ذات الامتداد الدولي والابتزاز الرقمي" data-en="6. International Cybercrime & Digital Offenses">6. Cybercriminalité Internationale & Extorsion Numérique</option>
+            <option value="Droit de la Migration & Protection des Personnes Vulnérables" data-fr="7. Migration, Traite des êtres humains & Personnes Vulnérables" data-ar="7. قضايا الهجرة، الاتجار بالبشر وحماية الفئات الهشة (النساء والفتيات)" data-en="7. Migration Law & Protection of Vulnerable Persons">7. Migration, Traite des êtres humains & Personnes Vulnérables</option>
+            <option value="Conseil Juridique & Représentation Judiciaire" data-fr="8. Conseil Juridique Général & Représentation devant les Tribunaux" data-ar="8. استشارة قانونية عامة أو تمثيل أمام المحاكم" data-en="8. General Legal Counsel & Court Representation">8. Conseil Juridique Général & Représentation devant les Tribunaux</option>
+          </select>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" data-fr="Degré d'urgence" data-ar="درجة الاستعجال" data-en="Urgency Level">Degré d'urgence</label>
+            <select id="clientUrgency" class="form-select">
+              <option value="Normal" data-fr="Normal (Rendez-vous standard)" data-ar="عادي (حجز موعد اعتيادي)" data-en="Normal (Standard Appointment)">Normal (Rendez-vous standard)</option>
+              <option value="Urgent (Délai judiciaire)" data-fr="Urgent (Délai ou audience proche)" data-ar="مستعجل (أجل قضائي أو جلسة قريبة)" data-en="Urgent (Strict Court Deadline)">Urgent (Délai ou audience proche)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-fr="Mode de consultation" data-ar="طريقة الاستشارة" data-en="Consultation Mode">Mode de consultation</label>
+            <select id="clientMode" class="form-select">
+              <option value="Au Cabinet à Meknès" data-fr="En présentiel au Cabinet (Meknès)" data-ar="حضورياً بالمكتب في مكناس" data-en="In-Person at Meknès Office">En présentiel au Cabinet (Meknès)</option>
+              <option value="Par Téléphone / Appel" data-fr="Consultation Téléphonique" data-ar="استشارة هاتفية مباشرة" data-en="Phone Consultation">Consultation Téléphonique</option>
+              <option value="À distance (Visioconférence WhatsApp)" data-fr="À distance (Vidéo WhatsApp / International)" data-ar="عن بُعد (مكالمة فيديو للمقيمين خارج مكناس أو بالخارج)" data-en="Remote Video Call (International / MRE)">À distance (Vidéo WhatsApp / International)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" data-fr="Date souhaitée (Optionnel)" data-ar="التاريخ المقترح (اختياري)" data-en="Preferred Date (Optional)">Date souhaitée</label>
+            <input type="date" id="clientDate" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" data-fr="Créneau préféré" data-ar="الفترة المفضلة" data-en="Preferred Time Slot">Créneau préféré</label>
+            <select id="clientSlot" class="form-select">
+              <option value="Matinée (09h00 - 13h00)" data-fr="Matinée (09h00 - 13h00)" data-ar="الفترة الصباحية (09:00 - 13:00)" data-en="Morning (09:00 - 13:00)">Matinée (09h00 - 13h00)</option>
+              <option value="Après-midi (15h00 - 19h00)" data-fr="Après-midi (15h00 - 19h00)" data-ar="فترة بعد الزوال (15:00 - 19:00)" data-en="Afternoon (15:00 - 19:00)">Après-midi (15h00 - 19h00)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-fr="Résumé confidentiel de votre demande (Optionnel)" data-ar="ملخص سري لطلبكم (اختياري)" data-en="Confidential Summary (Optional)">Résumé confidentiel de votre demande</label>
+          <textarea id="clientNotes" class="form-textarea" rows="2" placeholder="..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width:100%;">
+          <span data-fr="Confirmer et envoyer sur WhatsApp" data-ar="تأكيد وإرسال الطلب مباشرة عبر واتساب" data-en="Confirm & Send via WhatsApp">Confirmer et envoyer sur WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL 2: QR CODE & SHARE HUB ================= -->
+  <div class="modal-backdrop" id="qrModal" role="dialog" aria-modal="true">
+    <div class="modal-card" style="text-align:center;">
+      <button type="button" class="modal-close" onclick="closeQrModal()">✕</button>
+      <h3 class="panel-subtitle" style="margin-top:0;color:#f5dda2;"
+          data-fr="Carte NFC & QR Code Officiel"
+          data-ar="البطاقة الذكية ورمز QR الرسمي"
+          data-en="Official NFC Card & QR Code">
+        Carte NFC & QR Code Officiel
+      </h3>
+
+      <div style="border-radius:14px;overflow:hidden;border:2px solid var(--gold-bright);margin-bottom:16px;background:#fff;">
+        <img src="Sans titre (85.6 x 53.98 mm) verso_2.jpg"
+             alt="QR Code Officiel"
+             style="width:100%;height:auto;display:block;"
+             onerror="if(!this.dataset.t1){this.dataset.t1=1;this.src='Sans titre (85.6 x 53.98 mm) verso.jpg';}else if(!this.dataset.t2){this.dataset.t2=1;this.src='verso.jpg';}else{this.src='logo.jpeg.png';}">
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button type="button" class="btn btn-gold" onclick="shareDigitalProfile()">
+          <span data-fr="Partager le profil digital" data-ar="مشاركة رابط البروفيل الرقمي" data-en="Share Digital Profile">Partager le profil digital</span>
+        </button>
+        <button type="button" class="btn btn-outline-gold" onclick="copyText('https://cartepro414-alt.github.io/Maitre-Houssam-ED-DAKY/')">
+          <span data-fr="Copier le lien officiel" data-ar="نسخ الرابط الرسمي" data-en="Copy Official Link">Copier le lien officiel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastNotify" class="toast-notify">Copié avec succès ✓</div>
+
+  <!-- ================= JAVASCRIPT ENGINE ================= -->
   <script>
     const biography = {
       fr: [
@@ -1499,70 +1461,178 @@
       ]
     };
 
+    const expertiseDomains = {
+      fr: [
+        { title: "Représentation & Conseil Juridique", desc: "Défense des droits, conseil stratégique et représentation devant les juridictions du Royaume." },
+        { title: "Droit des Affaires & Investissements", desc: "Accompagnement juridique des entreprises, sociétés et investissements étrangers au Maroc." },
+        { title: "Litiges Nationaux & Internationaux", desc: "Règlement des différends commerciaux, civils et contentieux à dimension transnationale." },
+        { title: "Infractions Financières & Cybercriminalité", desc: "Traitement des dossiers liés aux délits financiers et à la cybercriminalité internationale." },
+        { title: "Protection des Personnes Vulnérables", desc: "Assistance juridique dédiée à la protection des droits des femmes, des filles et des mineurs." },
+        { title: "Droit de la Migration & Droit Pénal", desc: "Accompagnement dans les dossiers de migration, traite des êtres humains et criminalité organisée." }
+      ],
+      ar: [
+        { title: "التمثيل القضائي والاستشارة القانونية", desc: "الدفاع عن الحقوق والمصالح المشروعة وتقديم الاستشارات القانونية والتمثيل أمام مختلف المحاكم." },
+        { title: "مواكبة المقاولات والاستثمارات الأجنبية", desc: "المواكبة القانونية للشركات والمؤسسات والمستثمرين الأجانب وحماية معاملاتهم التجارية." },
+        { title: "تسوية النزاعات الوطنية والدولية", desc: "تدبير وفض المنازعات التجارية والمدنية والملفات ذات الامتداد الوطني والدولي." },
+        { title: "الجرائم المالية والجرائم الإلكترونية", desc: "الترافع والمواكبة في قضايا المنازعات المالية والجرائم السيبرانية ذات البعد الدولي." },
+        { title: "حماية الفئات الهشة والأسرة", desc: "خبرة عملية في ملفات حماية حقوق النساء والفتيات والقاصرين وضمان الولوج إلى العدالة." },
+        { title: "قضايا الهجرة والقانون الجنائي", desc: "معالجة الملفات المرتبطة بالهجرة ومكافحة الاتجار بالبشر والجريمة المنظمة." }
+      ],
+      en: [
+        { title: "Judicial Representation & Legal Counsel", desc: "Strategic legal advisory and strong representation before national courts and jurisdictions." },
+        { title: "Corporate Law & Foreign Investment", desc: "Comprehensive legal support for businesses, corporations, and foreign investors in Morocco." },
+        { title: "Domestic & International Disputes", desc: "Resolution of complex commercial, civil, and cross-border legal disputes." },
+        { title: "Financial Offenses & Cybercrime", desc: "Defense and counsel in financial litigation and international cybercrime cases." },
+        { title: "Protection of Vulnerable Persons", desc: "Dedicated legal protection safeguarding the rights of women, girls, and minors." },
+        { title: "Migration & Transnational Criminal Law", desc: "Experienced handling of migration law, human trafficking, and organized crime cases." }
+      ]
+    };
+
+    const processSteps = {
+      fr: [
+        { title: "Prise de Contact & Rendez-vous", desc: "Planification rapide d'une consultation au cabinet à Meknès, par téléphone ou en visioconférence." },
+        { title: "Étude Confidentielle du Dossier", desc: "Analyse juridique approfondie des pièces et des faits sous la garantie absolue du secret professionnel." },
+        { title: "Stratégie, Conseil & Défense", desc: "Mise en œuvre de la procédure judiciaire ou transactionnelle optimale pour défendre vos droits." }
+      ],
+      ar: [
+        { title: "التواصل وتحديد الموعد", desc: "برمجة سريعة لاستشارتكم سواء حضورياً بالمكتب في مكناس، أو عبر الهاتف، أو عن بُعد." },
+        { title: "دراسة الملف بسرية تامة", desc: "تحليل قانوني دقيق للوثائق والوقائع في إطار الالتزام المطلق بالسر المهني وأخلاقيات المحاماة." },
+        { title: "المواكبة والتمثيل القضائي", desc: "صياغة الاستراتيجية القانونية الأنجع والترافع أمام المحاكم للدفاع عن حقوقكم ومصالحكم المشروعة." }
+      ],
+      en: [
+        { title: "Initial Contact & Scheduling", desc: "Prompt scheduling of your consultation at the Meknès office, by phone, or via remote video call." },
+        { title: "Confidential Case Assessment", desc: "Thorough legal analysis of your documents and facts under strict attorney-client privilege." },
+        { title: "Legal Strategy & Representation", desc: "Execution of the optimal judicial or advisory strategy to defend your legitimate rights." }
+      ]
+    };
+
     const cardIcons = [
-      `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zm14 0l-3 7h6l-3-7zM8 21h8"/></svg>`,
-      `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-      `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 18h16M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 3l9 5H3l9-5z"/></svg>`
+      `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zm14 0l-3 7h6l-3-7zM8 21h8"/></svg>`,
+      `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 18h16M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 3l9 5H3l9-5z"/></svg>`
     ];
 
+    let currentLang = "fr";
+
     function setLanguage(lang) {
+      currentLang = lang;
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-
       document.body.classList.toggle("arabic", lang === "ar");
 
-      document.querySelectorAll("[data-fr][data-ar]").forEach(element => {
-        element.textContent = element.dataset[lang];
-      });
-
-      document.querySelectorAll("[data-aria-fr][data-aria-ar][data-aria-en]").forEach(element => {
-        const key = "aria" + lang.charAt(0).toUpperCase() + lang.slice(1);
-        if (element.dataset[key]) {
-          element.setAttribute("aria-label", element.dataset[key]);
-        }
-      });
-
-      document.querySelectorAll("[data-alt-fr][data-alt-ar][data-alt-en]").forEach(element => {
-        const key = "alt" + lang.charAt(0).toUpperCase() + lang.slice(1);
-        if (element.dataset[key]) {
-          element.setAttribute("alt", element.dataset[key]);
-        }
+      document.querySelectorAll("[data-fr][data-ar]").forEach(el => {
+        if (el.dataset[lang]) el.textContent = el.dataset[lang];
       });
 
       const heroLead = document.getElementById("heroLead");
-      if (heroLead) {
-        heroLead.textContent = biography[lang][0];
+      if (heroLead) heroLead.textContent = biography[lang][0];
+
+      // Render 6 Expertise Domains
+      const expContainer = document.getElementById("expertiseGrid");
+      if (expContainer) {
+        expContainer.innerHTML = "";
+        expertiseDomains[lang].forEach((item, idx) => {
+          const box = document.createElement("article");
+          box.className = "card-3d glass-panel";
+          box.innerHTML = `<div class="card-top"><div class="card-icon orb-3d-sapphire">${cardIcons[idx % 3]}</div><span class="card-num">0${idx + 1}</span></div><h3></h3><p></p>`;
+          box.querySelector("h3").textContent = item.title;
+          box.querySelector("p").textContent = item.desc;
+          expContainer.appendChild(box);
+        });
       }
 
+      // Render 3 Process Steps
+      const procContainer = document.getElementById("processGrid");
+      if (procContainer) {
+        procContainer.innerHTML = "";
+        processSteps[lang].forEach((step, idx) => {
+          const box = document.createElement("article");
+          box.className = "card-3d glass-panel";
+          box.innerHTML = `<div class="card-top"><div class="card-icon orb-3d-sapphire">${cardIcons[idx]}</div><span class="card-num">0${idx + 1}</span></div><h3></h3><p></p>`;
+          box.querySelector("h3").textContent = step.title;
+          box.querySelector("p").textContent = step.desc;
+          procContainer.appendChild(box);
+        });
+      }
+
+      // Render 3 Biography Cards
       const bioContainer = document.getElementById("bio");
-      bioContainer.innerHTML = "";
-      biography[lang].forEach((paragraphText, index) => {
-        const card = document.createElement("article");
-        card.className = "bio-card";
-        card.innerHTML = `
-          <div class="bio-card-header">
-            <div class="bio-card-icon" aria-hidden="true">${cardIcons[index]}</div>
-            <span class="bio-card-num">0${index + 1}</span>
-          </div>
-          <p></p>
-        `;
-        card.querySelector("p").textContent = paragraphText;
-        bioContainer.appendChild(card);
-      });
+      if (bioContainer) {
+        bioContainer.innerHTML = "";
+        biography[lang].forEach((paragraphText, index) => {
+          const card = document.createElement("article");
+          card.className = "card-3d glass-panel";
+          card.innerHTML = `<div class="card-top"><div class="card-icon orb-3d-sapphire">${cardIcons[index]}</div><span class="card-num">0${index + 1}</span></div><p></p>`;
+          card.querySelector("p").textContent = paragraphText;
+          bioContainer.appendChild(card);
+        });
+      }
 
       document.getElementById("frButton").classList.toggle("active", lang === "fr");
       document.getElementById("arButton").classList.toggle("active", lang === "ar");
-      const enButton = document.getElementById("enButton");
-      if (enButton) {
-        enButton.classList.toggle("active", lang === "en");
+      document.getElementById("enButton").classList.toggle("active", lang === "en");
+
+      document.title = lang === "ar"
+        ? "الأستاذ حسام الدّاكي | محامٍ بهيئة المحامين بمكناس"
+        : (lang === "en" ? "Maître Houssam ED-Daky | Attorney at Law in Meknès" : "Maître Houssam ED-Daky | Avocat au Barreau de Meknès");
+    }
+
+    function toggleCardTheme() {
+      document.body.classList.toggle("theme-card-light");
+    }
+
+    function flipNfcCard() {
+      const flipper = document.getElementById("nfcCardFlipper");
+      if (flipper) flipper.classList.toggle("is-flipped");
+    }
+
+    function openConsultModal() { document.getElementById("consultModal").classList.add("is-open"); }
+    function closeConsultModal() { document.getElementById("consultModal").classList.remove("is-open"); }
+    function openQrModal() { document.getElementById("qrModal").classList.add("is-open"); }
+    function closeQrModal() { document.getElementById("qrModal").classList.remove("is-open"); }
+
+    function submitConsultationWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById("clientName").value.trim();
+      const status = document.getElementById("clientStatus").value;
+      const topic = document.getElementById("clientTopic").value;
+      const urgency = document.getElementById("clientUrgency").value;
+      const mode = document.getElementById("clientMode").value;
+      const date = document.getElementById("clientDate").value;
+      const slot = document.getElementById("clientSlot").value;
+      const notes = document.getElementById("clientNotes").value.trim();
+
+      let msg = currentLang === "ar"
+        ? `السلام عليكم الأستاذ حسام الدّاكي،\n\nأود طلب استشارة قانونية / حجز موعد:\n• الاسم: ${name}\n• الصفة: ${status}\n• المجال القانوني: ${topic}\n• درجة الاستعجال: ${urgency}\n• طريقة الاستشارة: ${mode}\n• الفترة المفضلة: ${date ? date + ' - ' : ''}${slot}`
+        : `Bonjour Maître Houssam ED-Daky,\n\nJe souhaite solliciter une consultation juridique / un rendez-vous :\n• Nom : ${name}\n• Qualité : ${status}\n• Domaine : ${topic}\n• Urgence : ${urgency}\n• Mode : ${mode}\n• Créneau souhaité : ${date ? date + ' - ' : ''}${slot}`;
+
+      if (notes) {
+        msg += currentLang === "ar" ? `\n• ملخص الطلب: ${notes}` : `\n• Résumé : ${notes}`;
       }
 
-      if (lang === "fr") {
-        document.title = "Maître Houssam ED-Daky | Avocat à Meknès";
-      } else if (lang === "ar") {
-        document.title = "الأستاذ حسام الداكي | محامٍ بمكناس";
+      window.open(`https://wa.me/212613498521?text=${encodeURIComponent(msg)}`, "_blank");
+      closeConsultModal();
+    }
+
+    function copyText(value) {
+      navigator.clipboard.writeText(value).then(() => {
+        const toast = document.getElementById("toastNotify");
+        toast.textContent = currentLang === "ar" ? "تم النسخ بنجاح ✓" : (currentLang === "en" ? "Copied to clipboard ✓" : "Copié avec succès ✓");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2200);
+      });
+    }
+
+    function shareDigitalProfile() {
+      const url = "https://cartepro414-alt.github.io/Maitre-Houssam-ED-DAKY/";
+      if (navigator.share) {
+        navigator.share({
+          title: "Maître Houssam ED-Daky | Avocat au Barreau de Meknès",
+          text: "Profil Digital & Coordonnées — Maître Houssam ED-Daky",
+          url: url
+        });
       } else {
-        document.title = "Maître Houssam ED-Daky | Attorney at Law in Meknès";
+        copyText(url);
       }
     }
 
@@ -1572,7 +1642,7 @@
         "VERSION:3.0",
         "FN:Maître Houssam ED-Daky",
         "N:ED-Daky;Houssam;;;Maître",
-        "ORG:Cabinet d'avocat",
+        "ORG:Cabinet Maître Houssam ED-Daky",
         "TITLE:Avocat au Barreau de Meknès",
         "TEL;TYPE=WORK,VOICE:+212532723374",
         "TEL;TYPE=CELL,VOICE:+212662649697",
@@ -1583,21 +1653,31 @@
         "END:VCARD"
       ].join("\r\n");
 
-      const blob = new Blob([vcard], {
-        type: "text/vcard;charset=utf-8"
-      });
-
+      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-
       link.href = url;
       link.download = "Maitre-Houssam-ED-Daky.vcf";
       link.click();
-
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     }
 
     setLanguage("fr");
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const tiltStage = document.getElementById("tiltStage");
+      if (tiltStage) {
+        tiltStage.addEventListener("mousemove", (e) => {
+          const rect = tiltStage.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          tiltStage.style.transform = `rotateY(${x * 16}deg) rotateX(${-y * 16}deg)`;
+        });
+        tiltStage.addEventListener("mouseleave", () => {
+          tiltStage.style.transform = "rotateY(0deg) rotateX(0deg)";
+        });
+      }
+    });
   </script>
 
 </body>
