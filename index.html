@@ -703,7 +703,6 @@
     }
     .action-tile.tile-gold-cta svg { stroke: #040b18; }
 
-    /* Hidden Owner Bar — Only Visible When Owner Unlocks via Secret Link (?edit=...) or 5 Logo Taps */
     .owner-edit-box {
       display: none;
       margin-top: 14px;
@@ -790,7 +789,7 @@
     .modal-backdrop.is-open { display: flex; }
     .modal-card {
       width: 100%;
-      max-width: 540px;
+      max-width: 560px;
       border-radius: 22px;
       padding: 26px 22px;
       border: 2px solid var(--gold-bright);
@@ -1262,7 +1261,7 @@
                 <span data-fr="Envoyer un e-mail officiel" data-ar="إرسال بريد إلكتروني رسمي" data-en="Send an Official Email">إرسال بريد إلكتروني رسمي</span>
               </a>
 
-              <a class="action-tile full" href="https://search.google.com/local/writereview?placeid=ChIJzwx6RgBFoA0REEonJ8VrNq8" target="_blank" rel="noopener">
+              <a class="action-tile full google-review-link" href="https://search.google.com/local/writereview?placeid=ChIJzwx6RgBFoA0REEonJ8VrNq8" target="_blank" rel="noopener">
                 <div class="action-tile-icon orb-3d-sapphire">
                   <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
@@ -1275,7 +1274,6 @@
               </button>
             </div>
 
-            <!-- Hidden Owner Control Panel (Shown ONLY to Owner via ?edit=... or 5 Logo Taps) -->
             <div class="owner-edit-box" id="ownerControlBar">
               <div style="text-align:start;">
                 <strong style="font-size:12.5px;color:var(--gold-bright);display:block;"
@@ -1286,9 +1284,9 @@
                 </strong>
                 <span style="font-size:11px;color:var(--text-muted);"
                       data-fr="Mise à jour sécurisée par code PIN"
-                      data-ar="تحديث فوري للهاتف، واتساب، الإيميل والعنوان"
-                      data-en="Instant PIN-protected profile update">
-                  تحديث فوري للهاتف، واتساب، الإيميل والعنوان
+                      data-ar="تحديث فوري للأرقام، الاستشارة، الخرائط وتقييم Google"
+                      data-en="Instant PIN-protected profile & links update">
+                  تحديث فوري للأرقام، الاستشارة، الخرائط وتقييم Google
                 </span>
               </div>
               <button type="button" class="icon-pill-btn" onclick="openOwnerModal()">
@@ -1359,11 +1357,11 @@
             </div>
 
             <div class="gps-nav-bar">
-              <a href="https://maps.app.goo.gl/TVmGBoyNB2NkteZ19" target="_blank" rel="noopener" class="btn btn-royal" style="min-height:44px;padding:10px 14px;font-size:11.5px;">
+              <a id="mapsLinkBtn" href="https://maps.app.goo.gl/TVmGBoyNB2NkteZ19" target="_blank" rel="noopener" class="btn btn-royal" style="min-height:44px;padding:10px 14px;font-size:11.5px;">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <span data-fr="Ouvrir Google Maps" data-ar="فتح في Google Maps" data-en="Open Google Maps">فتح في Google Maps</span>
               </a>
-              <a href="https://waze.com/ul?q=Avenue%20des%20F.A.R.%20Rue%20Doukkala%20Meknes&navigate=yes" target="_blank" rel="noopener" class="btn btn-outline-gold" style="min-height:44px;padding:10px 14px;font-size:11.5px;">
+              <a id="wazeLinkBtn" href="https://waze.com/ul?q=Avenue%20des%20F.A.R.%20Rue%20Doukkala%20Meknes&navigate=yes" target="_blank" rel="noopener" class="btn btn-outline-gold" style="min-height:44px;padding:10px 14px;font-size:11.5px;">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
                 <span data-fr="Itinéraire Waze" data-ar="التوجيه عبر Waze" data-en="Navigate with Waze">التوجيه عبر Waze</span>
               </a>
@@ -1523,12 +1521,33 @@
 
         <div class="form-grid-2">
           <div class="form-group">
-            <label class="form-label" data-fr="WhatsApp :" data-ar="رقم واتساب :" data-en="WhatsApp:">رقم واتساب :</label>
+            <label class="form-label" data-fr="WhatsApp :" data-ar="رقم واتساب الرئيسي :" data-en="Main WhatsApp:">رقم واتساب الرئيسي :</label>
             <input type="text" id="editWhatsapp" class="form-input" required>
           </div>
           <div class="form-group">
-            <label class="form-label" data-fr="E-mail :" data-ar="البريد الإلكتروني :" data-en="Email:">البريد الإلكتروني :</label>
-            <input type="email" id="editEmail" class="form-input" required>
+            <label class="form-label" data-fr="Tél. Consultation :" data-ar="رقم هاتف الاستشارات / المواعيد :" data-en="Consultation Phone:">رقم هاتف الاستشارات / المواعيد :</label>
+            <input type="text" id="editConsultPhone" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-fr="E-mail :" data-ar="البريد الإلكتروني :" data-en="Email:">البريد الإلكتروني :</label>
+          <input type="email" id="editEmail" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-fr="Lien Avis Google :" data-ar="رابط تقييمات Google :" data-en="Google Reviews URL:">رابط تقييمات Google :</label>
+          <input type="url" id="editGoogleReview" class="form-input">
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" data-fr="Lien Google Maps :" data-ar="رابط Google Maps :" data-en="Google Maps URL:">رابط Google Maps :</label>
+            <input type="url" id="editMapsUrl" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-fr="Lien Waze :" data-ar="رابط Waze :" data-en="Waze URL:">رابط Waze :</label>
+            <input type="url" id="editWazeUrl" class="form-input">
           </div>
         </div>
 
@@ -1591,7 +1610,11 @@
       mobile: "+212 6 62 64 96 97",
       fixe: "+212 5 32 72 33 74",
       whatsapp: "+212 6 13 49 85 21",
+      consult_phone: "+212 6 13 49 85 21",
       email: "Houssameddaky@gmail.com",
+      google_review_url: "https://search.google.com/local/writereview?placeid=ChIJzwx6RgBFoA0REEonJ8VrNq8",
+      maps_url: "https://maps.app.goo.gl/TVmGBoyNB2NkteZ19",
+      waze_url: "https://waze.com/ul?q=Avenue%20des%20F.A.R.%20Rue%20Doukkala%20Meknes&navigate=yes",
       address_ar: "الطابق الثالث، مكتب رقم 6 VN، إقامة D، شارع القوات المسلحة الملكية، زنقة دكالة، مكناس 50000، المغرب",
       address_fr: "3ème étage, Bureau N°6 VN, Résidence D, Avenue des F.A.R., Rue Doukkala, Meknès 50000, Maroc",
       address_en: "3rd Floor, Office No. 6 VN, Residence D, Avenue des F.A.R., Rue Doukkala, Meknès 50000, Morocco"
@@ -1676,20 +1699,29 @@
     }
 
     function applyProfileData() {
-      const mDigits = cleanDigits(profileData.mobile);
-      const fDigits = cleanDigits(profileData.fixe);
-      const wDigits = cleanDigits(profileData.whatsapp);
+      const mDigits = cleanDigits(profileData.mobile) || cleanDigits(DEFAULT_DATA.mobile);
+      const fDigits = cleanDigits(profileData.fixe) || cleanDigits(DEFAULT_DATA.fixe);
+      const wDigits = cleanDigits(profileData.whatsapp) || cleanDigits(DEFAULT_DATA.whatsapp);
+      const reviewUrl = (profileData.google_review_url || "").trim() || DEFAULT_DATA.google_review_url;
+      const mapsUrl = (profileData.maps_url || "").trim() || DEFAULT_DATA.maps_url;
+      const wazeUrl = (profileData.waze_url || "").trim() || DEFAULT_DATA.waze_url;
 
-      document.getElementById("dispMobile").textContent = profileData.mobile;
-      document.getElementById("dispFixe").textContent = profileData.fixe;
-      document.getElementById("dispWhatsapp").textContent = profileData.whatsapp;
-      document.getElementById("dispEmail").textContent = profileData.email;
-      document.getElementById("dispAddress").textContent = profileData["address_" + currentLang] || profileData.address_ar;
+      document.getElementById("dispMobile").textContent = profileData.mobile || DEFAULT_DATA.mobile;
+      document.getElementById("dispFixe").textContent = profileData.fixe || DEFAULT_DATA.fixe;
+      document.getElementById("dispWhatsapp").textContent = profileData.whatsapp || DEFAULT_DATA.whatsapp;
+      document.getElementById("dispEmail").textContent = profileData.email || DEFAULT_DATA.email;
+      document.getElementById("dispAddress").textContent = profileData["address_" + currentLang] || profileData.address_ar || DEFAULT_DATA.address_ar;
 
       document.querySelectorAll(".tel-mobile-link").forEach(a => a.href = `tel:+${mDigits}`);
       document.querySelectorAll(".tel-fixe-link").forEach(a => a.href = `tel:+${fDigits}`);
       document.querySelectorAll(".wa-dynamic-link").forEach(a => a.href = `https://wa.me/${wDigits}`);
-      document.querySelectorAll(".mail-dynamic-link").forEach(a => a.href = `mailto:${profileData.email}`);
+      document.querySelectorAll(".mail-dynamic-link").forEach(a => a.href = `mailto:${profileData.email || DEFAULT_DATA.email}`);
+      document.querySelectorAll(".google-review-link").forEach(a => a.href = reviewUrl);
+
+      const mapsBtn = document.getElementById("mapsLinkBtn");
+      const wazeBtn = document.getElementById("wazeLinkBtn");
+      if (mapsBtn) mapsBtn.href = mapsUrl;
+      if (wazeBtn) wazeBtn.href = wazeUrl;
     }
 
     function unlockOwnerMode(autoOpenModal) {
@@ -1730,7 +1762,7 @@
       try {
         const res = await fetch(CLOUD_API_URL);
         const json = await res.json();
-        if (json && json.mobile) {
+        if (json && (json.mobile || json.whatsapp || json.email)) {
           profileData = { ...DEFAULT_DATA, ...json };
           localStorage.setItem("maitre_eddaky_cache", JSON.stringify(profileData));
           applyProfileData();
@@ -1742,12 +1774,16 @@
       const params = new URLSearchParams(window.location.search);
       const editKey = params.get("edit");
       document.getElementById("ownerPinInput").value = editKey ? editKey : "";
-      document.getElementById("editMobile").value = profileData.mobile;
-      document.getElementById("editFixe").value = profileData.fixe;
-      document.getElementById("editWhatsapp").value = profileData.whatsapp;
-      document.getElementById("editEmail").value = profileData.email;
-      document.getElementById("editAddressAr").value = profileData.address_ar;
-      document.getElementById("editAddressFr").value = profileData.address_fr;
+      document.getElementById("editMobile").value = profileData.mobile || "";
+      document.getElementById("editFixe").value = profileData.fixe || "";
+      document.getElementById("editWhatsapp").value = profileData.whatsapp || "";
+      document.getElementById("editConsultPhone").value = profileData.consult_phone || profileData.whatsapp || "";
+      document.getElementById("editEmail").value = profileData.email || "";
+      document.getElementById("editGoogleReview").value = profileData.google_review_url || "";
+      document.getElementById("editMapsUrl").value = profileData.maps_url || "";
+      document.getElementById("editWazeUrl").value = profileData.waze_url || "";
+      document.getElementById("editAddressAr").value = profileData.address_ar || "";
+      document.getElementById("editAddressFr").value = profileData.address_fr || "";
       document.getElementById("ownerModal").classList.add("is-open");
     }
 
@@ -1763,7 +1799,11 @@
         mobile: document.getElementById("editMobile").value.trim(),
         fixe: document.getElementById("editFixe").value.trim(),
         whatsapp: document.getElementById("editWhatsapp").value.trim(),
+        consult_phone: document.getElementById("editConsultPhone").value.trim(),
         email: document.getElementById("editEmail").value.trim(),
+        google_review_url: document.getElementById("editGoogleReview").value.trim(),
+        maps_url: document.getElementById("editMapsUrl").value.trim(),
+        waze_url: document.getElementById("editWazeUrl").value.trim(),
         address_ar: document.getElementById("editAddressAr").value.trim(),
         address_fr: document.getElementById("editAddressFr").value.trim()
       };
@@ -1894,7 +1934,9 @@
       const date = document.getElementById("clientDate").value;
       const slot = document.getElementById("clientSlot").value;
       const notes = document.getElementById("clientNotes").value.trim();
-      const wDigits = cleanDigits(profileData.whatsapp);
+
+      const targetPhone = (profileData.consult_phone || "").trim() || profileData.whatsapp || DEFAULT_DATA.whatsapp;
+      const cDigits = cleanDigits(targetPhone);
 
       let msg = currentLang === "ar"
         ? `السلام عليكم الأستاذ حسام الدّاكي،\n\nأود طلب استشارة قانونية / حجز موعد:\n• الاسم: ${name}\n• الصفة: ${status}\n• المجال القانوني: ${topic}\n• درجة الاستعجال: ${urgency}\n• طريقة الاستشارة: ${mode}\n• الفترة المفضلة: ${date ? date + ' - ' : ''}${slot}`
@@ -1904,7 +1946,7 @@
         msg += currentLang === "ar" ? `\n• ملخص الطلب: ${notes}` : `\n• Résumé : ${notes}`;
       }
 
-      window.open(`https://wa.me/${wDigits}?text=${encodeURIComponent(msg)}`, "_blank");
+      window.open(`https://wa.me/${cDigits}?text=${encodeURIComponent(msg)}`, "_blank");
       closeConsultModal();
     }
 
