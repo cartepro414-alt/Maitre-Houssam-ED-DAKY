@@ -1760,9 +1760,10 @@
 
       if (!CLOUD_API_URL) return;
       try {
-        const res = await fetch(CLOUD_API_URL);
+        const sep = CLOUD_API_URL.includes("?") ? "&" : "?";
+        const res = await fetch(`${CLOUD_API_URL}${sep}t=${Date.now()}`);
         const json = await res.json();
-        if (json && (json.mobile || json.whatsapp || json.email)) {
+        if (json && (json.mobile || json.fixe || json.whatsapp || json.email)) {
           profileData = { ...DEFAULT_DATA, ...json };
           localStorage.setItem("maitre_eddaky_cache", JSON.stringify(profileData));
           applyProfileData();
